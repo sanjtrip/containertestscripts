@@ -27,7 +27,7 @@ $ROCM_VERSION/bin/rocm-smi --showhw
 
 
 echo "Run the milc docker and run the run-benchmark script and output to milc-benchmark.out"
-docker run --rm -it --device /dev/dri --device /dev/kfd -v `pwd`/out:/benchmark/out --security-opt seccomp=unconfined amdih/milc:12ddd7d9 /bin/bash -c "cd /benchmark; run-benchmark -o milc-benchmark.out"
+docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined amdih/milc:12ddd7d9 /bin/bash -c "cd /benchmark; run-benchmark -o milc-benchmark.out"
 echo "milc run-benchmark script complete"
 
 
