@@ -2,7 +2,7 @@
 #
 #Copyright (c) 2021 Advanced Micro Devices, Inc. All Rights Reserved.
 #Author: Siddharth Srinivasan, Sid.srinivasan@amd.com
-#Version: V1.1
+#Version: V1.0
 #
 #This script runs the Chroma test commands for singularity container
 #
