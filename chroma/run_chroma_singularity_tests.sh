@@ -29,6 +29,18 @@ echo "Run chroma docker using singularity and run the run-benchmark script with 
 singularity run --pwd /benchmark --writable-tmpfs chroma_3.43.0.sif run-benchmark --ngpus 1
 echo "chroma run-benchmark script complete"
 
+echo "Run chroma docker using singularity and run the run-benchmark script with 2 gpu"
+singularity run --pwd /benchmark --writable-tmpfs chroma_3.43.0.sif run-benchmark --ngpus 2
+echo "chroma run-benchmark script complete"
+
+echo "Run chroma docker using singularity and run the run-benchmark script with 4 gpu"
+singularity run --pwd /benchmark --writable-tmpfs chroma_3.43.0.sif run-benchmark --ngpus 4
+echo "chroma run-benchmark script complete"
+
+echo "Run chroma docker using singularity and run the run-benchmark script with 8 gpu"
+singularity run --pwd /benchmark --writable-tmpfs chroma_3.43.0.sif run-benchmark --ngpus 8
+echo "chroma run-benchmark script complete"
+
 echo "==== Using $ROCM_VERSION to collect ROCm information.==== "
 $ROCM_VERSION/bin/rocm-smi
 $ROCM_VERSION/bin/rocm-smi --showhw
