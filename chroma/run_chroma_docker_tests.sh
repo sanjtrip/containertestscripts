@@ -10,7 +10,10 @@
 #       sh ./run_chroma_docker_tests.sh
 #
 
-echo "Pull amdih/chroma docker container"
+echo "=== CHROMA Log Collection Utility: V2.0 ==="
+/bin/date
+
+echo "=== Section: Pull amdih/chroma docker container ======="
 docker pull amdih/chroma:3.43.0
 echo "Pull complete"
 
@@ -25,26 +28,26 @@ echo "==== Using $ROCM_VERSION to collect ROCm information.==== "
 $ROCM_VERSION/bin/rocm-smi
 $ROCM_VERSION/bin/rocm-smi --showhw
 
-echo "Run the chroma docker and run the run-benchmark script with the option --ngpus 1"
+echo "==== Section: Run chroma docker run-benchmark script with --ngpus 1 ======"
 docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined amdih/chroma:3.43.0 /bin/bash -c "cd /benchmark; run-benchmark --ngpus 1; "
-echo "chroma run-benchmark script complete"
+echo "=== chroma run-benchmark script complete ===="
 
-echo "Run the chroma docker and run the run-benchmark script with the option --ngpus 2"
+echo "==== Section: Run chroma docker run-benchmark script with --ngpus 2 ======"
 docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined amdih/chroma:3.43.0 /bin/bash -c "cd /benchmark; run-benchmark --ngpus 2; "
-echo "chroma run-benchmark script complete"
+echo "=== chroma run-benchmark script complete ==="
 
-echo "Run the chroma docker and run the run-benchmark script with the option --ngpus 4"
+echo "==== Section: Run chroma docker run-benchmark script with --ngpus 4 ======"
 docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined amdih/chroma:3.43.0 /bin/bash -c "cd /benchmark; run-benchmark --ngpus 4; "
-echo "chroma run-benchmark script complete"
+echo "=== chroma run-benchmark script complete ==="
 
-echo "Run the chroma docker and run the run-benchmark script with the option --ngpus 8"
+echo "==== Section: Run chroma docker run-benchmark script with --ngpus 8 ======"
 docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined amdih/chroma:3.43.0 /bin/bash -c "cd /benchmark; run-benchmark --ngpus 8; "
-echo "chroma run-benchmark script complete"
+echo "=== chroma run-benchmark script complete ==="
 
 echo "==== Using $ROCM_VERSION to collect ROCm information.==== "
 $ROCM_VERSION/bin/rocm-smi
 $ROCM_VERSION/bin/rocm-smi --showhw
 
-echo "Show logs"
+echo "======== Section: print logs ========"
 /bin/dmesg | grep -E 'gpu|pcie' | tail -100
 

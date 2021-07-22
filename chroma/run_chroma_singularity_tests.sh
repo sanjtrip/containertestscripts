@@ -10,9 +10,12 @@
 #       sh ./run_chroma_singularity_tests.sh
 #
 
-echo "Pull amdih/milc container"
+echo "=== CHROMA Log Collection Utility: V2.0 ==="
+/bin/date
+
+echo "=== Section: Pull amdih/chroma docker container ======="
 singularity pull --docker-login chroma_3.43.0.sif docker://amdih/chroma:3.43.0
-echo "Pull complete"
+echo "=== Pull complete ===="
 
 echo "===== Section: Available ROCm versions ==============="
 /bin/ls -v -d /opt/rocm*
@@ -25,25 +28,25 @@ echo "==== Using $ROCM_VERSION to collect ROCm information.==== "
 $ROCM_VERSION/bin/rocm-smi
 $ROCM_VERSION/bin/rocm-smi --showhw
 
-echo "Run chroma docker using singularity and run the run-benchmark script with 1 gpu"
+echo "==== Section: Run chroma docker run-benchmark script with --ngpus 1 ========"
 singularity run --pwd /benchmark --writable-tmpfs chroma_3.43.0.sif run-benchmark --ngpus 1
-echo "chroma run-benchmark script complete"
+echo "=== chroma run-benchmark script complete ===="
 
-echo "Run chroma docker using singularity and run the run-benchmark script with 2 gpu"
+echo "==== Section: Run chroma docker run-benchmark script with --ngpus 2 ======"
 singularity run --pwd /benchmark --writable-tmpfs chroma_3.43.0.sif run-benchmark --ngpus 2
-echo "chroma run-benchmark script complete"
+echo "=== chroma run-benchmark script complete ==="
 
-echo "Run chroma docker using singularity and run the run-benchmark script with 4 gpu"
+echo "==== Section: Run chroma docker run-benchmark script with --ngpus 4 ======"
 singularity run --pwd /benchmark --writable-tmpfs chroma_3.43.0.sif run-benchmark --ngpus 4
-echo "chroma run-benchmark script complete"
+echo "=== chroma run-benchmark script complete ==="
 
-echo "Run chroma docker using singularity and run the run-benchmark script with 8 gpu"
+echo "==== Section: Run chroma docker run-benchmark script with --ngpus 8 ======"
 singularity run --pwd /benchmark --writable-tmpfs chroma_3.43.0.sif run-benchmark --ngpus 8
-echo "chroma run-benchmark script complete"
+echo "=== chroma run-benchmark script complete ==="
 
 echo "==== Using $ROCM_VERSION to collect ROCm information.==== "
 $ROCM_VERSION/bin/rocm-smi
 $ROCM_VERSION/bin/rocm-smi --showhw
 
-echo "Show logs"
+echo "======== Section: print logs ========"
 /bin/dmesg | grep -E 'gpu|pcie' | tail -100
