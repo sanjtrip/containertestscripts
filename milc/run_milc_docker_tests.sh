@@ -10,7 +10,11 @@
 #	sh ./run_milc_docker_tests.sh
 #
 
-echo "Pull amdih/milc docker container"
+
+echo "=== MILC Log Collection Utility: V2.0 ==="
+/bin/date
+
+echo "=== Section: Pull amdih/milc docker container ======"
 docker pull amdih/milc:12ddd7d9
 echo "Pull complete"
 
@@ -26,7 +30,7 @@ $ROCM_VERSION/bin/rocm-smi
 $ROCM_VERSION/bin/rocm-smi --showhw
 
 
-echo "Run the milc docker and run the run-benchmark script and output to milc-benchmark.out"
+echo " ===== Section: Run MILC docker run-benchmark script and output to file ======="
 docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined amdih/milc:12ddd7d9 /bin/bash -c "cd /benchmark; run-benchmark -o milc-benchmark.out"
 echo "milc run-benchmark script complete"
 
@@ -35,5 +39,5 @@ echo "==== Using $ROCM_VERSION to collect ROCm information.==== "
 $ROCM_VERSION/bin/rocm-smi
 $ROCM_VERSION/bin/rocm-smi --showhw
 
-echo "Show logs"
+echo "===== Section: Show logs ==========="
 /bin/dmesg | grep -E 'gpu|pcie' | tail -100
