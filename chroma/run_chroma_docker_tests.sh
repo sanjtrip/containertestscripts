@@ -13,6 +13,8 @@
 echo "=== CHROMA Log Collection Utility: V2.0 ==="
 /bin/date
 
+echo "==== Section: Running on $(/bin/hostname) Node ========"
+
 echo "=== Section: Pull amdih/chroma docker container ======="
 docker pull amdih/chroma:3.43.0
 echo "Pull complete"

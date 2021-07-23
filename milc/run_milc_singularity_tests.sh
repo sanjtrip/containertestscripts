@@ -13,6 +13,8 @@
 echo "=== MILC Log Collection Utility: V2.0 ==="
 /bin/date
 
+echo "==== Section: Running on $(/bin/hostname) Node ========"
+
 echo "=== Section: Pull amdih/milc docker container ======"
 singularity pull --docker-login milc_12ddd7d9.sif docker://amdih/milc:12ddd7d9
 echo "Pull complete"
@@ -37,5 +39,5 @@ $ROCM_VERSION/bin/rocm-smi
 $ROCM_VERSION/bin/rocm-smi --showhw
 
 echo "======= Section: Show logs ======"
-/bin/dmesg | grep -E 'gpu|pcie' | tail -100
+/bin/dmesg  | grep -E 'gpu|pcie' | tail -100
 

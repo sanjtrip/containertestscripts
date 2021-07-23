@@ -14,6 +14,8 @@
 echo "=== MILC Log Collection Utility: V2.0 ==="
 /bin/date
 
+echo "==== Section: Running on $(/bin/hostname) Node ========"
+
 echo "=== Section: Pull amdih/milc docker container ======"
 docker pull amdih/milc:12ddd7d9
 echo "Pull complete"
