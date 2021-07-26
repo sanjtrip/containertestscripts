@@ -15,6 +15,9 @@ echo "=== MILC Log Collection Utility: V2.0 ==="
 
 echo "==== Section: Running on $(/bin/hostname) Node ========"
 
+echo "======== Section: Singularity version ========="
+/usr/bin/singularity --version
+
 echo "=== Section: Pull amdih/milc docker container ======"
 singularity pull --docker-login milc_12ddd7d9.sif docker://amdih/milc:12ddd7d9
 echo "Pull complete"

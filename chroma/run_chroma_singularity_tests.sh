@@ -15,6 +15,9 @@ echo "=== CHROMA Log Collection Utility: V2.0 ==="
 
 echo "==== Section: Running on $(/bin/hostname) Node ========"
 
+echo "===== Section: Singularity Version =========="
+/usr/bin/singularity --version
+
 echo "=== Section: Pull amdih/chroma docker container ======="
 singularity pull --docker-login chroma_3.43.0.sif docker://amdih/chroma:3.43.0
 echo "=== Pull complete ===="
