@@ -6,7 +6,7 @@ wget -O run_gromacs_docker_tests.sh --no-check-certificate https://raw.githubuse
 ```
 #### Download the docker script using:
 ```
-wget -O run_chroma_singularity_tests.sh --no-check-certificate https://raw.githubusercontent.com/sidamd/containertestscripts/main/gromacs/run_gromacs_singularity_tests.sh
+wget -O run_gromacs_singularity_tests.sh --no-check-certificate https://raw.githubusercontent.com/sidamd/containertestscripts/main/gromacs/run_gromacs_singularity_tests.sh
 ```
 ## Run the script:
 #### Run docker script using:
