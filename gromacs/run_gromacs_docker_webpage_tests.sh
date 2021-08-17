@@ -26,7 +26,7 @@ echo "===== Section: Available ROCm versions ==============="
 /bin/ls -v -d /opt/rocm*
 ROCM_VERSION=`/bin/ls -v -d /opt/rocm-[3-4]* | /usr/bin/tail -1`
     ROCM_VERSION=`/bin/ls -v -d /opt/rocm* | /usr/bin/tail -1`
-fi
+
 echo "==== Using $ROCM_VERSION to collect ROCm information.==== "
 $ROCM_VERSION/bin/rocm-smi
 $ROCM_VERSION/bin/rocm-smi --showhw
