@@ -16,7 +16,7 @@ echo "=== MILC Log Collection Utility: V2.0 ==="
 echo "==== Section: Running on $(/bin/hostname) Node ========"
 
 echo "=== Section: Pull amdih/gromacs docker container ======"
-docker pull amdih/gromacs:2020.3
+singularity pull gromacs_version_tags.sif docker://amdih/gromacs:2020.3
 echo "Pull complete"
 
 echo "===== Section: Available ROCm versions ==============="
