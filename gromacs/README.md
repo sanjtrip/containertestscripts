@@ -3,7 +3,6 @@
 #### Download the docker script using:
 ```
 wget -O run_gromacs_docker_tests.sh --no-check-certificate https://raw.githubusercontent.com/sidamd/containertestscripts/main/gromacs/run_gromacs_docker_tests.sh
-#### Download the singularity script using:
 ```
 #### Download the docker script using:
 ```
