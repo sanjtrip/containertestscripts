@@ -38,21 +38,21 @@ docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=u
 echo " ============= benchmark script complete ============ "
 
 echo "============== Running example GRID benchmark script with 1 GPUs in interactive mode ============ "
-docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined -e OMPI_ALLOW_RUN_AS_ROOT=1 -e OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1 amdih/grid:0.8.2 /bin/bash -c "mpirun –np 1 /benchmark/gpu_bind.sh Benchmark_ITT --accelerator-threads 8 --mpi 1.1.1.1"
+docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined -e OMPI_ALLOW_RUN_AS_ROOT=1 -e OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1 amdih/grid:0.8.2 /bin/bash -c "mpirun -np 1 /benchmark/gpu_bind.sh Benchmark_ITT --accelerator-threads 8 --mpi 1.1.1.1"
 echo " ============= benchmark script complete ============ "
 
 echo "============== Running example GRID benchmark script with 2 GPUs in interactive mode ============ "
-docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined -e OMPI_ALLOW_RUN_AS_ROOT=1 -e OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1 amdih/grid:0.8.2 /bin/bash -c "mpirun –np 2 /benchmark/gpu_bind.sh Benchmark_ITT --accelerator-threads 8 --mpi 1.1.1.2"
+docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined -e OMPI_ALLOW_RUN_AS_ROOT=1 -e OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1 amdih/grid:0.8.2 /bin/bash -c "mpirun -np 2 /benchmark/gpu_bind.sh Benchmark_ITT --accelerator-threads 8 --mpi 1.1.1.2"
 echo " ============= benchmark script complete ============ "
 
 echo "============== Running example GRID benchmark script with 4 GPUs in intera
 ctive mode ============ "
-docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined -e OMPI_ALLOW_RUN_AS_ROOT=1 -e OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1 amdih/grid:0.8.2 /bin/bash -c "mpirun –np 4 /benchmark/gpu_bind.sh Benchmark_ITT --accelerator-threads 8 --mpi 1.1.1.4"
+docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined -e OMPI_ALLOW_RUN_AS_ROOT=1 -e OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1 amdih/grid:0.8.2 /bin/bash -c "mpirun -np 4 /benchmark/gpu_bind.sh Benchmark_ITT --accelerator-threads 8 --mpi 1.1.1.4"
 echo " ============= benchmark script complete ============ "
 
 echo "============== Running example GRID benchmark script with 8 GPUs in intera
 ctive mode ============ "
-docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined -e OMPI_ALLOW_RUN_AS_ROOT=1 -e OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1 amdih/grid:0.8.2 /bin/bash -c "mpirun –np 8 /benchmark/gpu_bind.sh Benchmark_ITT --accelerator-threads 8 --mpi 1.1.1.8"
+docker run --rm -it --device /dev/dri --device /dev/kfd --security-opt seccomp=unconfined -e OMPI_ALLOW_RUN_AS_ROOT=1 -e OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1 amdih/grid:0.8.2 /bin/bash -c "mpirun -np 8 /benchmark/gpu_bind.sh Benchmark_ITT --accelerator-threads 8 --mpi 1.1.1.8"
 echo " ============= benchmark script complete ============ "
 
 echo "==== Using $ROCM_VERSION to collect ROCm information.==== "
