@@ -34,7 +34,7 @@ $ROCM_VERSION/bin/rocm-smi
 $ROCM_VERSION/bin/rocm-smi --showhw
 
 echo "========= Section: Run OpenMM benchmark scripts in non-interactive mode ============"
-singularity run ./openmm_version_tags.sif run-benchmarks
+/usr/local/bin/singularity run ./openmm_version_tags.sif run-benchmarks
 echo "=============== Section: OpenMM benchmark script complete ==========="
 
 echo "==== Using $ROCM_VERSION to collect ROCm information.==== "
