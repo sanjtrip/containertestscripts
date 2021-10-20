@@ -1,0 +1,457 @@
+./run_openmm_docker_webpage_tests.sh: 1: ./run_openmm_docker_webpage_tests.sh: !/bin/sh: not found
+./run_openmm_docker_webpage_tests.sh: 13: ./run_openmm_docker_webpage_tests.sh: cho: not found
+Tue Oct 19 22:35:48 PDT 2021
+==== Section: Running on ts1-sjc2-20 Node ========
+===== Section: Show which GPU system running scripts on ========== 
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+=== Section: Pull amdih/openmm docker container =======
+7.4.2: Pulling from amdih/openmm
+345e3491a907: Already exists
+57671312ef6f: Already exists
+5e9250ddb7d0: Already exists
+b8ab421754d3: Pulling fs layer
+b8ab421754d3: Verifying Checksum
+b8ab421754d3: Download complete
+b8ab421754d3: Pull complete
+Digest: sha256:44134c2d048962d0b75ff1719b58fea941693b62e5d508e63cc0e52e25287775
+Status: Downloaded newer image for amdih/openmm:7.4.2
+docker.io/amdih/openmm:7.4.2
+Pull complete
+===== Section: Available ROCm versions ===============
+/opt/rocm
+/opt/rocm-4.3.0
+==== Using /opt/rocm-4.3.0 to collect ROCm information.==== 
+
+
+======================= ROCm System Management Interface =======================
+================================= Concise Info =================================
+GPU  Temp   AvgPwr  SCLK    MCLK     Fan   Perf  PwrCap  VRAM%  GPU%  
+0    38.0c  42.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+1    42.0c  34.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+2    40.0c  38.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+3    38.0c  37.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+4    42.0c  35.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+5    41.0c  40.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+6    40.0c  34.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+7    40.0c  36.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+================================================================================
+============================= End of ROCm SMI Log ==============================
+
+
+======================= ROCm System Management Interface =======================
+============================ Concise Hardware Info =============================
+GPU  DID   GFX RAS  SDMA RAS  UMC RAS  VBIOS             BUS           
+0    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:43:00.0  
+1    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:23:00.0  
+2    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:26:00.0  
+3    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:03:00.0  
+4    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:E3:00.0  
+5    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:C3:00.0  
+6    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:C6:00.0  
+7    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:83:00.0  
+================================================================================
+============================= End of ROCm SMI Log ==============================
+========= Section: Run OpenMM benchmark scripts in interactive mode ============
+Platform: HIP
+Precision: single
+
+Test: gbsa
+Step Size: 2 fs
+Integrated 106600 steps in 59.5318 seconds
+309.423 ns/day
+Platform: HIP
+Precision: mixed
+
+Test: gbsa
+Step Size: 2 fs
+Integrated 106388 steps in 59.4953 seconds
+308.997 ns/day
+Platform: HIP
+Precision: double
+
+Test: gbsa
+Step Size: 2 fs
+Integrated 107575 steps in 60.3572 seconds
+307.983 ns/day
+Platform: HIP
+Precision: single
+
+Test: rf
+Step Size: 2 fs
+Integrated 98803 steps in 60.1153 seconds
+284.007 ns/day
+Platform: HIP
+Precision: mixed
+
+Test: rf
+Step Size: 2 fs
+Integrated 98594 steps in 60.0744 seconds
+283.599 ns/day
+Platform: HIP
+Precision: double
+
+Test: rf
+Step Size: 2 fs
+Integrated 98900 steps in 60.2633 seconds
+283.587 ns/day
+Platform: HIP
+Precision: single
+
+Test: pme (cutoff=0.9)
+Step Size: 2 fs
+Integrated 71061 steps in 61.584 seconds
+199.392 ns/day
+Platform: HIP
+Precision: mixed
+
+Test: pme (cutoff=0.9)
+Step Size: 2 fs
+Integrated 70548 steps in 60.4021 seconds
+201.826 ns/day
+Platform: HIP
+Precision: double
+
+Test: pme (cutoff=0.9)
+Step Size: 2 fs
+Integrated 70429 steps in 60.1386 seconds
+202.368 ns/day
+Platform: HIP
+Precision: single
+
+Test: apoa1rf
+Step Size: 2 fs
+Integrated 33471 steps in 61.9404 seconds
+93.3767 ns/day
+Platform: HIP
+Precision: mixed
+
+Test: apoa1rf
+Step Size: 2 fs
+Integrated 33580 steps in 62.2138 seconds
+93.269 ns/day
+Platform: HIP
+Precision: double
+
+Test: apoa1rf
+Step Size: 2 fs
+Integrated 33572 steps in 62.2771 seconds
+93.1521 ns/day
+Platform: HIP
+Precision: single
+
+Test: apoa1pme
+Step Size: 2 fs
+Integrated 20984 steps in 61.1516 seconds
+59.2958 ns/day
+Platform: HIP
+Precision: mixed
+
+Test: apoa1pme
+Step Size: 2 fs
+Integrated 20909 steps in 60.9865 seconds
+59.2439 ns/day
+Platform: HIP
+Precision: double
+
+Test: apoa1pme
+Step Size: 2 fs
+Integrated 20860 steps in 60.938 seconds
+59.1521 ns/day
+Platform: HIP
+Precision: single
+
+Test: apoa1ljpme
+Step Size: 2 fs
+Integrated 13920 steps in 60.5807 seconds
+39.7053 ns/day
+Platform: HIP
+Precision: mixed
+
+Test: apoa1ljpme
+Step Size: 2 fs
+Integrated 13906 steps in 60.6155 seconds
+39.6426 ns/day
+Platform: HIP
+Precision: double
+
+Test: apoa1ljpme
+Step Size: 2 fs
+Integrated 13939 steps in 60.79 seconds
+39.6226 ns/day
+python3: can't open file '/examples/benchmarks.py': [Errno 2] No such file or directory
+=============== Section: OpenMM benchmark script complete ===========
+========= Section: Run OpenMM benchmark scripts in non-interactive mode ============
+Platform: HIP
+Precision: single
+
+Test: gbsa
+Step Size: 2 fs
+Integrated 104326 steps in 59.6156 seconds
+302.396 ns/day
+Platform: HIP
+Precision: mixed
+
+Test: gbsa
+Step Size: 2 fs
+Integrated 103099 steps in 59.3852 seconds
+299.999 ns/day
+Platform: HIP
+Precision: double
+
+Test: gbsa
+Step Size: 2 fs
+Integrated 103718 steps in 60.3221 seconds
+297.113 ns/day
+Platform: HIP
+Precision: single
+
+Test: rf
+Step Size: 2 fs
+Integrated 98376 steps in 60.2432 seconds
+282.179 ns/day
+Platform: HIP
+Precision: mixed
+
+Test: rf
+Step Size: 2 fs
+Integrated 95717 steps in 60.096 seconds
+275.224 ns/day
+Platform: HIP
+Precision: double
+
+Test: rf
+Step Size: 2 fs
+Integrated 96008 steps in 60.1722 seconds
+275.712 ns/day
+Platform: HIP
+Precision: single
+
+Test: pme (cutoff=0.9)
+Step Size: 2 fs
+Integrated 68752 steps in 60.5041 seconds
+196.356 ns/day
+Platform: HIP
+Precision: mixed
+
+Test: pme (cutoff=0.9)
+Step Size: 2 fs
+Integrated 68592 steps in 60.2411 seconds
+196.754 ns/day
+Platform: HIP
+Precision: double
+
+Test: pme (cutoff=0.9)
+Step Size: 2 fs
+Integrated 68489 steps in 60.1027 seconds
+196.911 ns/day
+Platform: HIP
+Precision: single
+
+Test: apoa1rf
+Step Size: 2 fs
+Integrated 33427 steps in 62.5971 seconds
+92.2756 ns/day
+Platform: HIP
+Precision: mixed
+
+Test: apoa1rf
+Step Size: 2 fs
+Integrated 33326 steps in 62.3481 seconds
+92.3642 ns/day
+Platform: HIP
+Precision: double
+
+Test: apoa1rf
+Step Size: 2 fs
+Integrated 33249 steps in 61.9944 seconds
+92.6766 ns/day
+Platform: HIP
+Precision: single
+
+Test: apoa1pme
+Step Size: 2 fs
+Integrated 20827 steps in 61.1117 seconds
+58.8906 ns/day
+Platform: HIP
+Precision: mixed
+
+Test: apoa1pme
+Step Size: 2 fs
+Integrated 20812 steps in 61.0517 seconds
+58.906 ns/day
+Platform: HIP
+Precision: double
+
+Test: apoa1pme
+Step Size: 2 fs
+Integrated 20875 steps in 61.327 seconds
+58.8191 ns/day
+Platform: HIP
+Precision: single
+
+Test: apoa1ljpme
+Step Size: 2 fs
+Integrated 13844 steps in 60.7987 seconds
+39.347 ns/day
+Platform: HIP
+Precision: mixed
+
+Test: apoa1ljpme
+Step Size: 2 fs
+Integrated 13767 steps in 60.296 seconds
+39.4543 ns/day
+Platform: HIP
+Precision: double
+
+Test: apoa1ljpme
+Step Size: 2 fs
+Integrated 13829 steps in 60.7687 seconds
+39.3237 ns/day
+=============== Section: OpenMM benchmark script complete ===========
+==== Using /opt/rocm-4.3.0 to collect ROCm information.==== 
+
+
+======================= ROCm System Management Interface =======================
+================================= Concise Info =================================
+GPU  Temp   AvgPwr  SCLK    MCLK     Fan   Perf  PwrCap  VRAM%  GPU%  
+0    58.0c  43.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+1    42.0c  34.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+2    40.0c  39.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+3    38.0c  37.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+4    43.0c  35.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+5    41.0c  40.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+6    41.0c  34.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+7    41.0c  36.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+================================================================================
+============================= End of ROCm SMI Log ==============================
+
+
+======================= ROCm System Management Interface =======================
+============================ Concise Hardware Info =============================
+GPU  DID   GFX RAS  SDMA RAS  UMC RAS  VBIOS             BUS           
+0    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:43:00.0  
+1    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:23:00.0  
+2    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:26:00.0  
+3    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:03:00.0  
+4    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:E3:00.0  
+5    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:C3:00.0  
+6    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:C6:00.0  
+7    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:83:00.0  
+================================================================================
+============================= End of ROCm SMI Log ==============================
+======== Section: print logs ========
+[4769047.992841] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769048.015634] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.027525] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.027596] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.027634] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.266321] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.285390] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.292532] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.343602] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.348220] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.355554] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.377671] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769193.766645] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769193.766718] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769193.766756] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.006198] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.025475] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.032534] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.083706] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.088438] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.095936] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.118199] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769264.168637] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769264.168707] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769264.168744] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769264.407303] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769264.426734] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769264.433879] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769265.799753] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769265.799807] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769265.800850] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.633303] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.633454] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.647605] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.652624] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.652784] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.681152] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.684572] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.685591] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.686620] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769272.729141] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.559277] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.559346] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.559385] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.798454] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.817511] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.824561] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.877443] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.877500] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.878562] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.894950] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.074834] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.074903] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.074942] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.313844] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.333232] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.340323] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.392581] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.392637] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.393678] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.410298] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769483.825614] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769483.825683] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769483.825721] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769484.064330] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769484.083657] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769484.090708] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769485.473447] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769485.473500] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769485.474558] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769490.462024] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769490.462178] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769490.476097] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769490.481121] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769490.481275] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769491.114416] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769491.117862] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769491.118930] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769491.119957] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769492.176490] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769562.899854] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769562.899922] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769562.899962] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.138852] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.157701] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.164693] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.218373] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.218424] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.219448] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.239450] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769631.706187] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769631.706254] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769631.706291] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769631.944617] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769631.963949] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769631.970960] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769632.028496] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769632.028546] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769632.029578] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769632.049439] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
