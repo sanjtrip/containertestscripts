@@ -22,7 +22,7 @@ echo "===== Section: Singularity Version =========="
 /usr/bin/singularity --version
 
 echo "=== Section: Pull amdih/chroma docker container ======="
-singularity pull chroma_3.43.0.sif docker://amdih/chroma:3.43.0
+/usr/bin/singularity pull chroma_3.43.0.sif docker://amdih/chroma:3.43.0
 echo "=== Pull complete ===="
 
 echo "===== Section: Available ROCm versions ==============="
@@ -37,7 +37,7 @@ $ROCM_VERSION/bin/rocm-smi
 $ROCM_VERSION/bin/rocm-smi --showhw
 
 echo "==== Section: Run chroma docker run-benchmark script with --ngpus 1 ========"
-singularity run --pwd /benchmark --writable-tmpfs chroma_3.43.0.sif run-benchmark --ngpus 1
+/usr/bin/singularity run --pwd /benchmark --writable-tmpfs chroma_3.43.0.sif run-benchmark --ngpus 1
 echo "=== chroma run-benchmark script complete ===="
 
 echo "==== Using $ROCM_VERSION to collect ROCm information.==== "
