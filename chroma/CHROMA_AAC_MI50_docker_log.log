@@ -1,0 +1,233 @@
+=== CHROMA Log Collection Utility: V2.0 ===
+Thu Oct 21 15:05:07 PDT 2021
+==== Section: Running on ts1-sjc2-20 Node ========
+===== Section: Show which GPU system running scripts on ========== 
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+  Name:                    gfx906                             
+      Name:                    amdgcn-amd-amdhsa--gfx906:sramecc+:xnack-
+=== Section: Pull amdih/chroma docker container =======
+3.43.0: Pulling from amdih/chroma
+Digest: sha256:0c85b7a905a6fbc4ffda595d7ae340d3f6345bb6bbe8add7ef24c4128e2287e6
+Status: Image is up to date for amdih/chroma:3.43.0
+docker.io/amdih/chroma:3.43.0
+Pull complete
+===== Section: Available ROCm versions ===============
+/opt/rocm
+/opt/rocm-4.3.0
+==== Using /opt/rocm-4.3.0 to collect ROCm information.==== 
+
+
+======================= ROCm System Management Interface =======================
+================================= Concise Info =================================
+GPU  Temp   AvgPwr  SCLK    MCLK     Fan   Perf  PwrCap  VRAM%  GPU%  
+0    38.0c  41.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+1    42.0c  34.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+2    40.0c  38.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+3    39.0c  37.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+4    42.0c  35.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+5    40.0c  40.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+6    42.0c  34.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+7    39.0c  37.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+================================================================================
+============================= End of ROCm SMI Log ==============================
+
+
+======================= ROCm System Management Interface =======================
+============================ Concise Hardware Info =============================
+GPU  DID   GFX RAS  SDMA RAS  UMC RAS  VBIOS             BUS           
+0    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:43:00.0  
+1    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:23:00.0  
+2    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:26:00.0  
+3    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:03:00.0  
+4    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:E3:00.0  
+5    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:C3:00.0  
+6    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:C6:00.0  
+7    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:83:00.0  
+================================================================================
+============================= End of ROCm SMI Log ==============================
+==== Section: Run chroma docker run-benchmark script with --ngpus 1 ======
+[ece7654cc5d7:00018] Warning: could not find environment variable "/benchmark"
+Initialize done
+Initializing QUDA
+"hipErrorNoBinaryForGpu: Unable to find code object for all current devices!"
+[node:00022] *** Process received signal ***
+[node:00022] Signal: Aborted (6)
+[node:00022] Signal code:  (-6)
+[node:00022] [ 0] /lib/x86_64-linux-gnu/libpthread.so.0(+0x153c0)[0x7fe660dae3c0]
+[node:00022] [ 1] /lib/x86_64-linux-gnu/libc.so.6(gsignal+0xcb)[0x7fe62cf0018b]
+[node:00022] [ 2] /lib/x86_64-linux-gnu/libc.so.6(abort+0x12b)[0x7fe62cedf859]
+[node:00022] [ 3] /opt/rocm/lib/libamdhip64.so.4(+0x18f449)[0x7fe62d548449]
+[node:00022] [ 4] /opt/rocm/lib/libamdhip64.so.4(+0x68b00)[0x7fe62d421b00]
+[node:00022] [ 5] /opt/rocm/lib/libamdhip64.so.4(+0x91899)[0x7fe62d44a899]
+[node:00022] [ 6] /opt/rocm/lib/libamdhip64.so.4(+0x66d94)[0x7fe62d41fd94]
+[node:00022] [ 7] /opt/rocm/lib/libamdhip64.so.4(+0x11b688)[0x7fe62d4d4688]
+[node:00022] [ 8] /opt/rocm/lib/libamdhip64.so.4(+0x5ad15)[0x7fe62d413d15]
+[node:00022] [ 9] /lib/x86_64-linux-gnu/libpthread.so.0(+0x1247f)[0x7fe660dab47f]
+[node:00022] [10] /opt/rocm/lib/libamdhip64.so.4(+0x76dac)[0x7fe62d42fdac]
+[node:00022] [11] /opt/rocm/lib/libamdhip64.so.4(hipGetDeviceCount+0x5f)[0x7fe62d43848f]
+[node:00022] [12] /opt/quda/lib/libquda.so(_ZN4quda6device16get_device_countEv+0x19)[0x7fe65f7e86a9]
+[node:00022] [13] /opt/quda/lib/libquda.so(_ZN12Communicator16comm_init_commonEiPKiPFiS1_PvES2_+0xf5)[0x7fe65f7e5825]
+[node:00022] [14] /opt/quda/lib/libquda.so(_ZN12CommunicatorC1EiPKiPFiS1_PvES2_bS2_+0x18f)[0x7fe65f7e359f]
+[node:00022] [15] /opt/quda/lib/libquda.so(_ZNSt8_Rb_treeIN4quda7CommKeyESt4pairIKS1_12CommunicatorESt10_Select1stIS5_ESt4lessIS1_ESaIS5_EE17_M_construct_nodeIJRKSt21piecewise_construct_tSt5tupleIJRS3_EESG_IJRiRPKiRPFiSL_PvERSN_RbSR_EEEEEvPSt13_Rb_tree_nodeIS5_EDpOT_+0x48)[0x7fe65f7af008]
+[node:00022] [16] /opt/quda/lib/libquda.so(_ZNSt8_Rb_treeIN4quda7CommKeyESt4pairIKS1_12CommunicatorESt10_Select1stIS5_ESt4lessIS1_ESaIS5_EE17_M_emplace_uniqueIJRKSt21piecewise_construct_tSt5tupleIJRS3_EESG_IJRiRPKiRPFiSL_PvERSN_RbSR_EEEEES2_ISt17_Rb_tree_iteratorIS5_EbEDpOT_+0x38)[0x7fe65f7aee98]
+[node:00022] [17] /opt/quda/lib/libquda.so(comm_init+0x86)[0x7fe65f7ace06]
+[node:00022] [18] /opt/quda/lib/libquda.so(initCommsGridQuda+0xb6)[0x7fe65f73f436]
+[node:00022] [19] /opt/quda/lib/libquda.so(initQuda+0x14)[0x7fe65f7401b4]
+[node:00022] [20] /opt/chroma/lib/libchromalib.so(_ZN6Chroma10initializeEPiPPPc+0xc12)[0x7fe660488322]
+[node:00022] [21] chroma[0x2077bf]
+[node:00022] [22] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x7fe62cee10b3]
+[node:00022] [23] chroma[0x206f5e]
+[node:00022] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node ece7654cc5d7 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+=== chroma run-benchmark script complete ====
+==== Using /opt/rocm-4.3.0 to collect ROCm information.==== 
+
+
+======================= ROCm System Management Interface =======================
+================================= Concise Info =================================
+GPU  Temp   AvgPwr  SCLK    MCLK     Fan   Perf  PwrCap  VRAM%  GPU%  
+0    38.0c  41.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+1    42.0c  34.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+2    40.0c  38.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+3    38.0c  37.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+4    42.0c  35.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+5    40.0c  40.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+6    41.0c  34.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+7    39.0c  37.0W   930Mhz  1000Mhz  255%  auto  225.0W    0%   0%    
+================================================================================
+============================= End of ROCm SMI Log ==============================
+
+
+======================= ROCm System Management Interface =======================
+============================ Concise Hardware Info =============================
+GPU  DID   GFX RAS  SDMA RAS  UMC RAS  VBIOS             BUS           
+0    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:43:00.0  
+1    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:23:00.0  
+2    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:26:00.0  
+3    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:03:00.0  
+4    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:E3:00.0  
+5    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:C3:00.0  
+6    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:C6:00.0  
+7    66a1  ENABLED  ENABLED   ENABLED  113-D1631700-111  0000:83:00.0  
+================================================================================
+============================= End of ROCm SMI Log ==============================
+======== Section: print logs ========
+[4769047.992841] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769048.015634] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.027525] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.027596] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.027634] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.266321] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.285390] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.292532] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.343602] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.348220] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.355554] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769123.377671] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769193.766645] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769193.766718] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769193.766756] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.006198] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.025475] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.032534] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.083706] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.088438] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.095936] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769194.118199] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769264.168637] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769264.168707] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769264.168744] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769264.407303] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769264.426734] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769264.433879] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769265.799753] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769265.799807] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769265.800850] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.633303] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.633454] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.647605] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.652624] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.652784] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.681152] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.684572] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.685591] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769271.686620] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769272.729141] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.559277] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.559346] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.559385] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.798454] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.817511] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.824561] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.877443] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.877500] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.878562] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769344.894950] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.074834] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.074903] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.074942] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.313844] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.333232] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.340323] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.392581] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.392637] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.393678] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769414.410298] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769483.825614] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769483.825683] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769483.825721] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769484.064330] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769484.083657] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769484.090708] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769485.473447] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769485.473500] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769485.474558] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769490.462024] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769490.462178] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769490.476097] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769490.481121] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769490.481275] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769491.114416] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769491.117862] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769491.118930] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769491.119957] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769492.176490] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769562.899854] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769562.899922] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769562.899962] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.138852] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.157701] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.164693] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.218373] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.218424] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.219448] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769563.239450] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769631.706187] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769631.706254] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769631.706291] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769631.944617] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769631.963949] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769631.970960] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769632.028496] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769632.028546] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769632.029578] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!
+[4769632.049439] amdgpu: [powerplay] [MemMclks]: memclk dpm not enabled!

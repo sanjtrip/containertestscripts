@@ -1,0 +1,501 @@
+=== CHROMA Log Collection Utility: V2.0 ===
+Thu Oct 21 15:05:06 PDT 2021
+==== Section: Running on ixt-sjc2-67 Node ========
+===== Section: Show which GPU system running scripts on ========== 
+  Name:                    gfx908                             
+      Name:                    amdgcn-amd-amdhsa--gfx908:sramecc+:xnack-
+  Name:                    gfx908                             
+      Name:                    amdgcn-amd-amdhsa--gfx908:sramecc+:xnack-
+  Name:                    gfx908                             
+      Name:                    amdgcn-amd-amdhsa--gfx908:sramecc+:xnack-
+  Name:                    gfx908                             
+      Name:                    amdgcn-amd-amdhsa--gfx908:sramecc+:xnack-
+=== Section: Pull amdih/chroma docker container =======
+3.43.0: Pulling from amdih/chroma
+Digest: sha256:0c85b7a905a6fbc4ffda595d7ae340d3f6345bb6bbe8add7ef24c4128e2287e6
+Status: Image is up to date for amdih/chroma:3.43.0
+docker.io/amdih/chroma:3.43.0
+Pull complete
+===== Section: Available ROCm versions ===============
+/opt/rocm
+/opt/rocm-4.3.0
+==== Using /opt/rocm-4.3.0 to collect ROCm information.==== 
+
+
+======================= ROCm System Management Interface =======================
+================================= Concise Info =================================
+GPU  Temp   AvgPwr  SCLK    MCLK     Fan   Perf  PwrCap  VRAM%  GPU%  
+0    28.0c  31.0W   300Mhz  1200Mhz  255%  auto  290.0W    3%   0%    
+1    29.0c  32.0W   300Mhz  1200Mhz  255%  auto  290.0W    4%   0%    
+2    30.0c  34.0W   300Mhz  1200Mhz  255%  auto  290.0W    4%   0%    
+3    29.0c  32.0W   300Mhz  1200Mhz  255%  auto  290.0W    5%   0%    
+================================================================================
+============================= End of ROCm SMI Log ==============================
+
+
+======================= ROCm System Management Interface =======================
+============================ Concise Hardware Info =============================
+GPU  DID   GFX RAS  SDMA RAS  UMC RAS  VBIOS             BUS           
+0    738c  ENABLED  ENABLED   ENABLED  113-D3430500-037  0000:63:00.0  
+1    738c  ENABLED  ENABLED   ENABLED  113-D3430300-037  0000:43:00.0  
+2    738c  ENABLED  ENABLED   ENABLED  113-D3430500-037  0000:26:00.0  
+3    738c  ENABLED  ENABLED   ENABLED  113-D3430500-037  0000:03:00.0  
+================================================================================
+============================= End of ROCm SMI Log ==============================
+==== Section: Run chroma docker run-benchmark script with --ngpus 1 ======
+[7c74ab5ca9eb:00018] Warning: could not find environment variable "/benchmark"
+Initialize done
+Initializing QUDA
+QUDA 1.0.0 (git hip-debug-blas-segfault-713-gac539998c)
+*** HIP BACKEND ***
+HIP Driver version = 330500
+HIP Runtime version = 402
+Found device 0: Device 738c
+Found device 1: Device 738c
+Found device 2: Device 738c
+Found device 3: Device 738c
+Using device 0: Device 738c
+WARNING: Data reordering done on GPU (set with QUDA_REORDER_LOCATION=GPU/CPU)
+WARNING: Cache file not found.  All kernels will be re-tuned (if tuning is enabled).
+WARNING: Cache file not found.  All kernels will be re-tuned (if tuning is enabled).
+WARNING: Using device memory pool allocator
+WARNING: Using pinned memory pool allocator
+hipblasCreated successfully
+Max grid sizes=(2147483647, 2147483647, 2147483647
+Linkage = bool Chroma::MapObjectDiskEnv::registerAll(): registering map obj key colorvec
+0
+InlineMeasurements are: 
+<InlineMeasurements>
+
+    <elem>
+      <Name>MAKE_SOURCE</Name>
+      <Frequency>1</Frequency>
+      <Param>
+        <version>6</version>
+        <Source>
+          <version>2</version>
+          <SourceType>SHELL_SOURCE</SourceType>
+          <j_decay>3</j_decay>
+          <t_srce>0 0 0 0</t_srce>
+
+          <SmearingParam>
+            <wvf_kind>GAUGE_INV_GAUSSIAN</wvf_kind>
+            <wvf_param>2.0</wvf_param>
+            <wvfIntPar>5</wvfIntPar>
+            <no_smear_dir>3</no_smear_dir>
+          </SmearingParam>
+
+          <Displacement>
+            <version>1</version>
+            <DisplacementType>NONE</DisplacementType>
+          </Displacement>
+
+          <noLinkSmearing>
+            <LinkSmearingType>APE_SMEAR</LinkSmearingType>
+            <link_smear_fact>2.5</link_smear_fact>
+            <link_smear_num>1</link_smear_num>
+            <no_smear_dir>3</no_smear_dir>
+          </noLinkSmearing>
+        </Source>
+      </Param>
+      <NamedObject>
+        <gauge_id>default_gauge_field</gauge_id>
+        <source_id>sh_source_0</source_id>
+      </NamedObject>
+    </elem>
+
+
+    <elem>
+      <Name>PROPAGATOR</Name>
+      <Frequency>1</Frequency>
+      <Param>
+        <version>10</version>
+        <quarkSpinType>FULL</quarkSpinType>
+        <obsvP>false</obsvP>
+        <numRetries>1</numRetries>
+        <FermionAction>
+          <FermAct>CLOVER</FermAct>
+          <Mass>-0.0840</Mass>
+          <clovCoeffR>1.58932722549812</clovCoeffR>
+          <clovCoeffT>0.902783591772098</clovCoeffT>
+          <AnisoParam>
+            <anisoP>true</anisoP>
+            <t_dir>3</t_dir>
+            <xi_0>4.3</xi_0>
+            <nu>1.265</nu>
+          </AnisoParam>
+          <FermState>
+            <Name>STOUT_FERM_STATE</Name>
+            <rho>0.14</rho>
+            <n_smear>2</n_smear>
+            <orthog_dir>3</orthog_dir>
+            <FermionBC>
+              <FermBC>SIMPLE_FERMBC</FermBC>
+              <boundary>1 1 1 -1</boundary>
+            </FermionBC>
+          </FermState>
+
+        </FermionAction>
+
+        <InvertParam>
+  	  <invType>QUDA_CLOVER_INVERTER</invType>
+  	  <CloverParams>
+          <Mass>-0.0840</Mass>
+          <clovCoeffR>1.58932722549812</clovCoeffR>
+          <clovCoeffT>0.902783591772098</clovCoeffT>
+          <AnisoParam>
+            <anisoP>true</anisoP>
+            <t_dir>3</t_dir>
+            <xi_0>4.3</xi_0>
+            <nu>1.265</nu>
+          </AnisoParam>
+  	</CloverParams>
+
+  <RsdTarget>1.0e-7</RsdTarget>
+  <Delta>1.0e-1</Delta>
+  <MaxIter>10000</MaxIter>
+  <AntiPeriodicT>true</AntiPeriodicT>
+  <SolverType>BICGSTAB</SolverType>
+  <Verbose>false</Verbose>
+  <AsymmetricLinop>true</AsymmetricLinop>
+  <CudaReconstruct>RECONS_12</CudaReconstruct>
+  <CudaSloppyPrecision>HALF</CudaSloppyPrecision>
+  <CudaSloppyReconstruct>RECONS_12</CudaSloppyReconstruct>
+  <AxialGaugeFix>false</AxialGaugeFix>
+  <AutotuneDslash>true</AutotuneDslash>
+ <!--
+ <GCRInnerParams>
+        <RsdSloppy>1.0e-1</RsdSloppy>
+        <MaxIterSloppy>10</MaxIterSloppy>
+        <NKrylov>10</NKrylov>
+        <VerboseP>true</VerboseP>
+        <InvTypeSloppy>MR</InvTypeSloppy>
+   </GCRInnerParams>
+  -->
+        </InvertParam>
+      </Param>
+      <NamedObject>
+        <gauge_id>default_gauge_field</gauge_id>
+        <source_id>sh_source_0</source_id>
+        <prop_id>sh_prop_0</prop_id>
+      </NamedObject>
+    </elem>
+
+   <elem>
+      <Name>ERASE_NAMED_OBJECT</Name>
+      <Frequency>1</Frequency>
+      <NamedObject>
+        <object_id>sh_prop_0</object_id>
+        <object_type>LatticePropagator</object_type>
+      </NamedObject>
+    </elem>
+
+  </InlineMeasurements>
+
+Lattice initialized:
+  problem size = 24 24 24 128
+  layout size = 12 24 24 128
+  logical machine size = 1 1 1 1
+  subgrid size = 24 24 24 128
+  total number of nodes = 1
+  total volume = 1769472
+  subgrid volume = 1769472
+Initializing QDPDefaultAllocator.
+Finished init of RNG
+Finished lattice layout
+CHROMA: Attempt to read gauge field
+CHROMA: Gauge initialization: cfg_type = SCIDAC
+Single Precision Read
+DML_partition_in times: read 0.27  send 0.00  total 1.91
+QIO_read_finished
+CHROMA: Gauge field successfully read: time= 2.162617 secs
+CHROMA: initial plaquette measurement time=20.078323 secs
+CHROMA: There are 3 measurements 
+CHROMA: parsing inline measurements time=0.171342 secs
+CHROMA: Doing 3 measurements
+MAKE_SOURCE: propagator source constructor
+Source = SHELL_SOURCE
+Shell source
+Link smearing type = NONE
+Quark smearing type = GAUGE_INV_GAUSSIAN
+Displacement type = NONE
+color = 0
+spin = 0
+spin = 1
+spin = 2
+spin = 3
+color = 1
+spin = 0
+spin = 1
+spin = 2
+spin = 3
+color = 2
+spin = 0
+spin = 1
+spin = 2
+spin = 3
+Attempt to update source
+Source successfully update
+MAKE_SOURCE: total time = 102.247139 secs
+MAKE_SOURCE: ran successfully
+PROPAGATOR: propagator calculation
+Snarf the source from a named buffer
+Source successfully read and parsed
+FermAct = CLOVER
+Try the various factories
+u0 is 1
+Suitable factory found: compute the quark prop
+Calling quarkProp
+In quarkProp()
+  ... constructing linop  ...7.042592 sec
+  ... constructing invLinOp u0 is 1
+tuneDslasP = 1
+LinOpSysSolverQUDAClover:
+Using Asymmetric Linop: A_oo - D A^{-1}_ee D
+Enabling Dslash Autotuning
+Setting Precondition stuff to defaults for not using
+Creating CloverTerm
+Inverting CloverTerm
+ ...23.307465 sec
+  ... constructing PrecFermActQprop  ...0 sec
+Creating qprop took 30.350142sec 
+Entering quarkProp4
+Saving 28 sets of cached parameters to /benchmark/tunecache.tsv
+Saving 30 sets of cached parameters to /benchmark/tunecache.tsv
+Saving 38 sets of cached parameters to /benchmark/tunecache.tsv
+Saving 40 sets of cached parameters to /benchmark/tunecache.tsv
+BiCGstab: Convergence at 796 iterations, L2 relative residual: iterated = 8.702580e-08, true = 1.437512e-07 (requested = 1.000000e-07)
+Saving 44 sets of cached parameters to /benchmark/tunecache.tsv
+QUDA_BICGSTAB_CLOVER_SOLVER: time=61.126941 s	Performance=96.8964230870313 GFLOPS	Total Time (incl. load gauge)=65.963794 s
+QUDA_BICGSTAB_CLOVER_SOLVER: 796 iterations. Rsd = 1.33263e-07 Relative Rsd = 2.01170719826754e-07
+BiCGstab: Convergence at 681 iterations, L2 relative residual: iterated = 9.158961e-08, true = 1.558577e-07 (requested = 1.000000e-07)
+QUDA_BICGSTAB_CLOVER_SOLVER: time=2.47882 s	Performance=2046.6232739255 GFLOPS	Total Time (incl. load gauge)=2.498302 s
+QUDA_BICGSTAB_CLOVER_SOLVER: 681 iterations. Rsd = 1.324615e-07 Relative Rsd = 2.00757801806577e-07
+BiCGstab: Convergence at 664 iterations, L2 relative residual: iterated = 9.776362e-08, true = 1.463684e-07 (requested = 1.000000e-07)
+QUDA_BICGSTAB_CLOVER_SOLVER: time=2.416997 s	Performance=2045.58538043034 GFLOPS	Total Time (incl. load gauge)=2.436402 s
+QUDA_BICGSTAB_CLOVER_SOLVER: 664 iterations. Rsd = 1.285986e-07 Relative Rsd = 1.94541590046658e-07
+BiCGstab: Convergence at 628 iterations, L2 relative residual: iterated = 9.951490e-08, true = 1.427965e-07 (requested = 1.000000e-07)
+QUDA_BICGSTAB_CLOVER_SOLVER: time=2.284404 s	Performance=2044.8752258112 GFLOPS	Total Time (incl. load gauge)=2.303901 s
+QUDA_BICGSTAB_CLOVER_SOLVER: 628 iterations. Rsd = 1.234015e-07 Relative Rsd = 1.86313852109134e-07
+BiCGstab: Convergence at 690 iterations, L2 relative residual: iterated = 8.311160e-08, true = 1.442279e-07 (requested = 1.000000e-07)
+QUDA_BICGSTAB_CLOVER_SOLVER: time=2.5097 s	Performance=2046.57764657768 GFLOPS	Total Time (incl. load gauge)=2.528805 s
+QUDA_BICGSTAB_CLOVER_SOLVER: 690 iterations. Rsd = 1.387453e-07 Relative Rsd = 2.11104468480635e-07
+BiCGstab: Convergence at 665 iterations, L2 relative residual: iterated = 9.750919e-08, true = 1.492086e-07 (requested = 1.000000e-07)
+QUDA_BICGSTAB_CLOVER_SOLVER: time=2.407091 s	Performance=2057.0734728417 GFLOPS	Total Time (incl. load gauge)=2.429394 s
+QUDA_BICGSTAB_CLOVER_SOLVER: 665 iterations. Rsd = 1.414978e-07 Relative Rsd = 2.13476614130725e-07
+BiCGstab: Convergence at 675 iterations, L2 relative residual: iterated = 9.742477e-08, true = 1.560776e-07 (requested = 1.000000e-07)
+QUDA_BICGSTAB_CLOVER_SOLVER: time=2.446558 s	Performance=2051.29776352247 GFLOPS	Total Time (incl. load gauge)=2.465984 s
+QUDA_BICGSTAB_CLOVER_SOLVER: 675 iterations. Rsd = 1.348525e-07 Relative Rsd = 2.03671689029265e-07
+BiCGstab: Convergence at 695 iterations, L2 relative residual: iterated = 9.923339e-08, true = 1.478192e-07 (requested = 1.000000e-07)
+QUDA_BICGSTAB_CLOVER_SOLVER: time=2.514926 s	Performance=2058.37512311694 GFLOPS	Total Time (incl. load gauge)=2.533789 s
+QUDA_BICGSTAB_CLOVER_SOLVER: 695 iterations. Rsd = 1.1467e-07 Relative Rsd = 1.74237125491285e-07
+BiCGstab: Convergence at 714 iterations, L2 relative residual: iterated = 9.816036e-08, true = 1.495198e-07 (requested = 1.000000e-07)
+QUDA_BICGSTAB_CLOVER_SOLVER: time=2.590835 s	Performance=2053.57605604062 GFLOPS	Total Time (incl. load gauge)=2.609753 s
+QUDA_BICGSTAB_CLOVER_SOLVER: 714 iterations. Rsd = 1.336782e-07 Relative Rsd = 2.02114597283377e-07
+BiCGstab: Convergence at 884 iterations, L2 relative residual: iterated = 8.495352e-08, true = 1.475397e-07 (requested = 1.000000e-07)
+QUDA_BICGSTAB_CLOVER_SOLVER: time=3.20457 s	Performance=2052.27543270766 GFLOPS	Total Time (incl. load gauge)=3.226858 s
+QUDA_BICGSTAB_CLOVER_SOLVER: 884 iterations. Rsd = 1.289259e-07 Relative Rsd = 1.95803346248275e-07
+BiCGstab: Convergence at 718 iterations, L2 relative residual: iterated = 7.442574e-08, true = 1.124388e-07 (requested = 1.000000e-07)
+QUDA_BICGSTAB_CLOVER_SOLVER: time=2.609214 s	Performance=2051.7491479595 GFLOPS	Total Time (incl. load gauge)=2.628055 s
+QUDA_BICGSTAB_CLOVER_SOLVER: 718 iterations. Rsd = 1.099936e-07 Relative Rsd = 1.66947871915975e-07
+BiCGstab: Convergence at 668 iterations, L2 relative residual: iterated = 9.615418e-08, true = 1.477982e-07 (requested = 1.000000e-07)
+QUDA_BICGSTAB_CLOVER_SOLVER: time=2.41098 s	Performance=2060.11404002688 GFLOPS	Total Time (incl. load gauge)=2.430219 s
+QUDA_BICGSTAB_CLOVER_SOLVER: 668 iterations. Rsd = 1.275387e-07 Relative Rsd = 1.92651553126085e-07
+Exiting quarkProp4
+Destructing
+CLOV_LINOP: Time spent in clov deriv (total) = 0
+CLOV_LINOP: Time spent in clov apply/invapply (total) = 2.925428
+CLOV_LINOP: Time spent in clov deriv (total) = 0
+CLOV_LINOP: Time spent in clov apply/invapply (total) = 5.794435
+Propagator computed: time= 208.131099 secs
+Start writing propagator info
+Propagator successfully updated
+PROPAGATOR: total time = 243.306607 secs
+PROPAGATOR: ran successfully
+ERASE_NAMED_OBJECT: object erase
+Attempt to erase object name = sh_prop_0
+Object erased
+ERASE_NAMED_OBJECT: ran successfully
+CHROMA: measurements: time= 345.657995 secs
+CHROMA: total time = 376.263367 secs
+CHROMA: ran successfully
+WARNING: Environment variable QUDA_PROFILE_OUTPUT_BASE not set; writing to profile.tsv and profile_async.tsv
+Saving 44 sets of cached parameters to /benchmark/profile_0.tsv
+Saving 0 sets of cached profiles to /benchmark/profile_async_0.tsv
+
+               initQuda Total time =     0.564 secs
+                     init     =     0.564 secs (100.000%),	 with        2 calls at 2.818e+05 us per call
+        total accounted       =     0.564 secs (100.000%)
+        total missing         =     0.000 secs (  0.000%)
+
+          loadGaugeQuda Total time =     1.370 secs
+                 download     =     0.680 secs ( 49.658%),	 with        1 calls at 6.804e+05 us per call
+                     init     =     0.001 secs (  0.075%),	 with        1 calls at 1.034e+03 us per call
+                  compute     =     0.689 secs ( 50.254%),	 with        1 calls at 6.886e+05 us per call
+                     free     =     0.000 secs (  0.001%),	 with        1 calls at 1.000e+01 us per call
+        total accounted       =     1.370 secs ( 99.989%)
+        total missing         =     0.000 secs (  0.011%)
+
+         loadCloverQuda Total time =     1.145 secs
+                 download     =     0.836 secs ( 73.030%),	 with        1 calls at 8.362e+05 us per call
+                     init     =     0.000 secs (  0.038%),	 with        2 calls at 2.195e+02 us per call
+                     free     =     0.000 secs (  0.000%),	 with        1 calls at 3.000e+00 us per call
+        total accounted       =     0.837 secs ( 73.069%)
+        total missing         =     0.308 secs ( 26.931%)
+
+             invertQuda Total time =    94.055 secs
+                 download     =     0.124 secs (  0.132%),	 with       12 calls at 1.035e+04 us per call
+                   upload     =     0.116 secs (  0.124%),	 with       12 calls at 9.680e+03 us per call
+                 preamble     =     4.769 secs (  5.071%),	 with       24 calls at 1.987e+05 us per call
+                  compute     =    89.001 secs ( 94.627%),	 with       12 calls at 7.417e+06 us per call
+                 epilogue     =     0.037 secs (  0.039%),	 with       36 calls at 1.026e+03 us per call
+                     free     =     0.003 secs (  0.003%),	 with       36 calls at 7.636e+01 us per call
+        total accounted       =    94.050 secs ( 99.995%)
+        total missing         =     0.005 secs (  0.005%)
+
+                endQuda Total time =     0.840 secs
+
+       initQuda-endQuda Total time =   377.668 secs
+
+                   QUDA Total time =    97.974 secs
+                 download     =     1.641 secs (  1.675%),	 with       14 calls at 1.172e+05 us per call
+                   upload     =     0.116 secs (  0.119%),	 with       12 calls at 9.680e+03 us per call
+                     init     =     0.565 secs (  0.577%),	 with        5 calls at 1.130e+05 us per call
+                 preamble     =     4.769 secs (  4.868%),	 with       24 calls at 1.987e+05 us per call
+                  compute     =    89.690 secs ( 91.544%),	 with       13 calls at 6.899e+06 us per call
+                 epilogue     =     0.037 secs (  0.038%),	 with       36 calls at 1.026e+03 us per call
+                     free     =     0.003 secs (  0.003%),	 with       38 calls at 7.268e+01 us per call
+        total accounted       =    96.821 secs ( 98.823%)
+        total missing         =     1.153 secs (  1.177%)
+
+Device memory used = 3427.1 MB
+Pinned device memory used = 0.0 MB
+Managed memory used = 0.0 MB
+Page-locked host memory used = 50.5 MB
+Total host memory used >= 66.7 MB
+
+=== chroma run-benchmark script complete ====
+==== Using /opt/rocm-4.3.0 to collect ROCm information.==== 
+
+
+======================= ROCm System Management Interface =======================
+================================= Concise Info =================================
+GPU  Temp   AvgPwr  SCLK    MCLK     Fan   Perf  PwrCap  VRAM%  GPU%  
+0    36.0c  32.0W   300Mhz  1200Mhz  255%  auto  290.0W    3%   0%    
+1    31.0c  33.0W   300Mhz  1200Mhz  255%  auto  290.0W    4%   0%    
+2    32.0c  34.0W   300Mhz  1200Mhz  255%  auto  290.0W    4%   0%    
+3    31.0c  34.0W   300Mhz  1200Mhz  255%  auto  290.0W    5%   0%    
+================================================================================
+============================= End of ROCm SMI Log ==============================
+
+
+======================= ROCm System Management Interface =======================
+============================ Concise Hardware Info =============================
+GPU  DID   GFX RAS  SDMA RAS  UMC RAS  VBIOS             BUS           
+0    738c  ENABLED  ENABLED   ENABLED  113-D3430500-037  0000:63:00.0  
+1    738c  ENABLED  ENABLED   ENABLED  113-D3430300-037  0000:43:00.0  
+2    738c  ENABLED  ENABLED   ENABLED  113-D3430500-037  0000:26:00.0  
+3    738c  ENABLED  ENABLED   ENABLED  113-D3430500-037  0000:03:00.0  
+================================================================================
+============================= End of ROCm SMI Log ==============================
+======== Section: print logs ========
+[3044912.641436] amdgpu 0000:63:00.0: amdgpu: SMU is resumed successfully!
+[3044912.645672] amdgpu 0000:63:00.0: amdgpu: ring comp_1.0.0 uses VM inv eng 0 on hub 0
+[3044912.645673] amdgpu 0000:63:00.0: amdgpu: ring comp_1.1.0 uses VM inv eng 1 on hub 0
+[3044912.645674] amdgpu 0000:63:00.0: amdgpu: ring comp_1.2.0 uses VM inv eng 4 on hub 0
+[3044912.645674] amdgpu 0000:63:00.0: amdgpu: ring comp_1.3.0 uses VM inv eng 5 on hub 0
+[3044912.645675] amdgpu 0000:63:00.0: amdgpu: ring comp_1.0.1 uses VM inv eng 6 on hub 0
+[3044912.645676] amdgpu 0000:63:00.0: amdgpu: ring comp_1.1.1 uses VM inv eng 7 on hub 0
+[3044912.645677] amdgpu 0000:63:00.0: amdgpu: ring comp_1.2.1 uses VM inv eng 8 on hub 0
+[3044912.645677] amdgpu 0000:63:00.0: amdgpu: ring comp_1.3.1 uses VM inv eng 9 on hub 0
+[3044912.645678] amdgpu 0000:63:00.0: amdgpu: ring kiq_2.1.0 uses VM inv eng 10 on hub 0
+[3044912.645679] amdgpu 0000:63:00.0: amdgpu: ring sdma0 uses VM inv eng 0 on hub 1
+[3044912.645680] amdgpu 0000:63:00.0: amdgpu: ring sdma1 uses VM inv eng 1 on hub 1
+[3044912.645681] amdgpu 0000:63:00.0: amdgpu: ring sdma2 uses VM inv eng 4 on hub 1
+[3044912.645682] amdgpu 0000:63:00.0: amdgpu: ring sdma3 uses VM inv eng 5 on hub 1
+[3044912.645683] amdgpu 0000:63:00.0: amdgpu: ring sdma4 uses VM inv eng 6 on hub 1
+[3044912.645683] amdgpu 0000:63:00.0: amdgpu: ring sdma5 uses VM inv eng 0 on hub 2
+[3044912.645684] amdgpu 0000:63:00.0: amdgpu: ring sdma6 uses VM inv eng 1 on hub 2
+[3044912.645685] amdgpu 0000:63:00.0: amdgpu: ring sdma7 uses VM inv eng 4 on hub 2
+[3044912.645685] amdgpu 0000:63:00.0: amdgpu: ring vcn_dec_0 uses VM inv eng 5 on hub 2
+[3044912.645686] amdgpu 0000:63:00.0: amdgpu: ring vcn_enc_0.0 uses VM inv eng 6 on hub 2
+[3044912.645687] amdgpu 0000:63:00.0: amdgpu: ring vcn_enc_0.1 uses VM inv eng 7 on hub 2
+[3044912.645687] amdgpu 0000:63:00.0: amdgpu: ring vcn_dec_1 uses VM inv eng 8 on hub 2
+[3044912.645688] amdgpu 0000:63:00.0: amdgpu: ring vcn_enc_1.0 uses VM inv eng 9 on hub 2
+[3044912.645689] amdgpu 0000:63:00.0: amdgpu: ring vcn_enc_1.1 uses VM inv eng 10 on hub 2
+[3044912.645690] amdgpu 0000:63:00.0: amdgpu: ring jpeg_dec_0 uses VM inv eng 11 on hub 2
+[3044912.645690] amdgpu 0000:63:00.0: amdgpu: ring jpeg_dec_1 uses VM inv eng 12 on hub 2
+[3044913.174645] amdgpu 0000:63:00.0: amdgpu: recover vram bo from shadow start
+[3044913.175443] amdgpu 0000:63:00.0: amdgpu: recover vram bo from shadow done
+[3044913.175461] amdgpu 0000:43:00.0: amdgpu: GPU reset succeeded, trying to resume
+[3044913.340485] amdgpu 0000:43:00.0: amdgpu: HDCP: optional hdcp ta ucode is not available
+[3044913.340486] amdgpu 0000:43:00.0: amdgpu: DTM: optional dtm ta ucode is not available
+[3044913.340486] amdgpu 0000:43:00.0: amdgpu: RAP: optional rap ta ucode is not available
+[3044913.340487] amdgpu 0000:43:00.0: amdgpu: SECUREDISPLAY: securedisplay ta ucode is not available
+[3044913.341942] amdgpu 0000:43:00.0: amdgpu: SMU is resuming...
+[3044913.344602] amdgpu 0000:43:00.0: amdgpu: SMU is resumed successfully!
+[3044913.349112] amdgpu 0000:43:00.0: amdgpu: ring comp_1.0.0 uses VM inv eng 0 on hub 0
+[3044913.349113] amdgpu 0000:43:00.0: amdgpu: ring comp_1.1.0 uses VM inv eng 1 on hub 0
+[3044913.349114] amdgpu 0000:43:00.0: amdgpu: ring comp_1.2.0 uses VM inv eng 4 on hub 0
+[3044913.349115] amdgpu 0000:43:00.0: amdgpu: ring comp_1.3.0 uses VM inv eng 5 on hub 0
+[3044913.349115] amdgpu 0000:43:00.0: amdgpu: ring comp_1.0.1 uses VM inv eng 6 on hub 0
+[3044913.349116] amdgpu 0000:43:00.0: amdgpu: ring comp_1.1.1 uses VM inv eng 7 on hub 0
+[3044913.349117] amdgpu 0000:43:00.0: amdgpu: ring comp_1.2.1 uses VM inv eng 8 on hub 0
+[3044913.349118] amdgpu 0000:43:00.0: amdgpu: ring comp_1.3.1 uses VM inv eng 9 on hub 0
+[3044913.349118] amdgpu 0000:43:00.0: amdgpu: ring kiq_2.1.0 uses VM inv eng 10 on hub 0
+[3044913.349119] amdgpu 0000:43:00.0: amdgpu: ring sdma0 uses VM inv eng 0 on hub 1
+[3044913.349120] amdgpu 0000:43:00.0: amdgpu: ring sdma1 uses VM inv eng 1 on hub 1
+[3044913.349121] amdgpu 0000:43:00.0: amdgpu: ring sdma2 uses VM inv eng 4 on hub 1
+[3044913.349122] amdgpu 0000:43:00.0: amdgpu: ring sdma3 uses VM inv eng 5 on hub 1
+[3044913.349122] amdgpu 0000:43:00.0: amdgpu: ring sdma4 uses VM inv eng 6 on hub 1
+[3044913.349123] amdgpu 0000:43:00.0: amdgpu: ring sdma5 uses VM inv eng 0 on hub 2
+[3044913.349123] amdgpu 0000:43:00.0: amdgpu: ring sdma6 uses VM inv eng 1 on hub 2
+[3044913.349124] amdgpu 0000:43:00.0: amdgpu: ring sdma7 uses VM inv eng 4 on hub 2
+[3044913.349125] amdgpu 0000:43:00.0: amdgpu: ring vcn_dec_0 uses VM inv eng 5 on hub 2
+[3044913.349126] amdgpu 0000:43:00.0: amdgpu: ring vcn_enc_0.0 uses VM inv eng 6 on hub 2
+[3044913.349127] amdgpu 0000:43:00.0: amdgpu: ring vcn_enc_0.1 uses VM inv eng 7 on hub 2
+[3044913.349127] amdgpu 0000:43:00.0: amdgpu: ring vcn_dec_1 uses VM inv eng 8 on hub 2
+[3044913.349128] amdgpu 0000:43:00.0: amdgpu: ring vcn_enc_1.0 uses VM inv eng 9 on hub 2
+[3044913.349128] amdgpu 0000:43:00.0: amdgpu: ring vcn_enc_1.1 uses VM inv eng 10 on hub 2
+[3044913.349129] amdgpu 0000:43:00.0: amdgpu: ring jpeg_dec_0 uses VM inv eng 11 on hub 2
+[3044913.349130] amdgpu 0000:43:00.0: amdgpu: ring jpeg_dec_1 uses VM inv eng 12 on hub 2
+[3044913.878653] amdgpu 0000:43:00.0: amdgpu: recover vram bo from shadow start
+[3044913.879424] amdgpu 0000:43:00.0: amdgpu: recover vram bo from shadow done
+[3044913.879442] amdgpu 0000:26:00.0: amdgpu: GPU reset succeeded, trying to resume
+[3044914.044797] amdgpu 0000:26:00.0: amdgpu: HDCP: optional hdcp ta ucode is not available
+[3044914.044798] amdgpu 0000:26:00.0: amdgpu: DTM: optional dtm ta ucode is not available
+[3044914.044799] amdgpu 0000:26:00.0: amdgpu: RAP: optional rap ta ucode is not available
+[3044914.044800] amdgpu 0000:26:00.0: amdgpu: SECUREDISPLAY: securedisplay ta ucode is not available
+[3044914.046263] amdgpu 0000:26:00.0: amdgpu: SMU is resuming...
+[3044914.048608] amdgpu 0000:26:00.0: amdgpu: SMU is resumed successfully!
+[3044914.053172] amdgpu 0000:26:00.0: amdgpu: ring comp_1.0.0 uses VM inv eng 0 on hub 0
+[3044914.053173] amdgpu 0000:26:00.0: amdgpu: ring comp_1.1.0 uses VM inv eng 1 on hub 0
+[3044914.053174] amdgpu 0000:26:00.0: amdgpu: ring comp_1.2.0 uses VM inv eng 4 on hub 0
+[3044914.053175] amdgpu 0000:26:00.0: amdgpu: ring comp_1.3.0 uses VM inv eng 5 on hub 0
+[3044914.053176] amdgpu 0000:26:00.0: amdgpu: ring comp_1.0.1 uses VM inv eng 6 on hub 0
+[3044914.053177] amdgpu 0000:26:00.0: amdgpu: ring comp_1.1.1 uses VM inv eng 7 on hub 0
+[3044914.053178] amdgpu 0000:26:00.0: amdgpu: ring comp_1.2.1 uses VM inv eng 8 on hub 0
+[3044914.053179] amdgpu 0000:26:00.0: amdgpu: ring comp_1.3.1 uses VM inv eng 9 on hub 0
+[3044914.053180] amdgpu 0000:26:00.0: amdgpu: ring kiq_2.1.0 uses VM inv eng 10 on hub 0
+[3044914.053181] amdgpu 0000:26:00.0: amdgpu: ring sdma0 uses VM inv eng 0 on hub 1
+[3044914.053182] amdgpu 0000:26:00.0: amdgpu: ring sdma1 uses VM inv eng 1 on hub 1
+[3044914.053182] amdgpu 0000:26:00.0: amdgpu: ring sdma2 uses VM inv eng 4 on hub 1
+[3044914.053183] amdgpu 0000:26:00.0: amdgpu: ring sdma3 uses VM inv eng 5 on hub 1
+[3044914.053184] amdgpu 0000:26:00.0: amdgpu: ring sdma4 uses VM inv eng 6 on hub 1
+[3044914.053184] amdgpu 0000:26:00.0: amdgpu: ring sdma5 uses VM inv eng 0 on hub 2
+[3044914.053185] amdgpu 0000:26:00.0: amdgpu: ring sdma6 uses VM inv eng 1 on hub 2
+[3044914.053186] amdgpu 0000:26:00.0: amdgpu: ring sdma7 uses VM inv eng 4 on hub 2
+[3044914.053186] amdgpu 0000:26:00.0: amdgpu: ring vcn_dec_0 uses VM inv eng 5 on hub 2
+[3044914.053187] amdgpu 0000:26:00.0: amdgpu: ring vcn_enc_0.0 uses VM inv eng 6 on hub 2
+[3044914.053188] amdgpu 0000:26:00.0: amdgpu: ring vcn_enc_0.1 uses VM inv eng 7 on hub 2
+[3044914.053188] amdgpu 0000:26:00.0: amdgpu: ring vcn_dec_1 uses VM inv eng 8 on hub 2
+[3044914.053189] amdgpu 0000:26:00.0: amdgpu: ring vcn_enc_1.0 uses VM inv eng 9 on hub 2
+[3044914.053190] amdgpu 0000:26:00.0: amdgpu: ring vcn_enc_1.1 uses VM inv eng 10 on hub 2
+[3044914.053191] amdgpu 0000:26:00.0: amdgpu: ring jpeg_dec_0 uses VM inv eng 11 on hub 2
+[3044914.053192] amdgpu 0000:26:00.0: amdgpu: ring jpeg_dec_1 uses VM inv eng 12 on hub 2
+[3044914.582657] amdgpu 0000:26:00.0: amdgpu: recover vram bo from shadow start
+[3044914.583448] amdgpu 0000:26:00.0: amdgpu: recover vram bo from shadow done
+[3044914.583488] amdgpu 0000:03:00.0: amdgpu: GPU reset(2) succeeded!
+[3044914.583525] amdgpu 0000:63:00.0: amdgpu: GPU reset(2) succeeded!
+[3044914.583572] amdgpu 0000:43:00.0: amdgpu: GPU reset(2) succeeded!
+[3044914.583614] amdgpu 0000:26:00.0: amdgpu: GPU reset(2) succeeded!
