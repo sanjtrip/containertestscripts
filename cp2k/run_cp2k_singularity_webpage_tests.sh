@@ -34,11 +34,11 @@ $ROCM_VERSION/bin/rocm-smi
 $ROCM_VERSION/bin/rocm-smi --showhw
 
 echo "=========== Section: run cp2k script with 8 GPUS in interactive mode ========= "
-singularity run --writable-tmpfs --bind $(pwd):/tmp ./cp2k_version_tags.sif benchmark 32-H2O-RPA --gpu-count 8 --cpu-count 128 --omp-thread-count 8 --ranks 8 --rank-stride 16 --output /tmp/out_32
+/usr/local/bin/singularity run --writable-tmpfs --bind $(pwd):/tmp ./cp2k_version_tags.sif benchmark 32-H2O-RPA --gpu-count 8 --cpu-count 128 --omp-thread-count 8 --ranks 8 --rank-stride 16 --output /tmp/out_32
 echo "======= Section: cp2k script complete with 8 GPUs ========"
 
 echo "=========== Section: run cp2k script with 4 GPUS in interactive mode ========= "
-singularity run --writable-tmpfs --bind $(pwd):/tmp ./cp2k_version_tags.sif benchmark 32-H2O-RPA --gpu-count 4 --cpu-count 128 --omp-thread-count 8 --ranks 4 --rank-stride 32 --output /tmp/out_32
+/usr/local/bin/singularity run --writable-tmpfs --bind $(pwd):/tmp ./cp2k_version_tags.sif benchmark 32-H2O-RPA --gpu-count 4 --cpu-count 128 --omp-thread-count 8 --ranks 4 --rank-stride 32 --output /tmp/out_32
 echo "======= Section: cp2k script complete with 4 GPUs ========"
 
 echo "==== Using $ROCM_VERSION to collect ROCm information.==== "
