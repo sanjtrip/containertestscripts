@@ -1,0 +1,193 @@
+=== MINI-HACC Log Collection Utility: V2.0 ===
+Mon Dec  6 23:17:39 PST 2021
+==== Section: Running on ixt-sjc2-74 Node ========
+=== Section: Pull amdih/minihacc docker container ======
+1.0.0: Pulling from amdih/minihacc
+Digest: sha256:256a81d553866b0eb5910136e3713d007950e49c10ff77776d157d48986bc6cf
+Status: Image is up to date for amdih/minihacc:1.0.0
+docker.io/amdih/minihacc:1.0.0
+Pull complete
+===== Section: Available ROCm versions ===============
+/opt/rocm
+/opt/rocm-4.5.0
+==== Using /opt/rocm-4.5.0 to collect ROCm information.==== 
+
+
+======================= ROCm System Management Interface =======================
+================================= Concise Info =================================
+GPU  Temp   AvgPwr  SCLK    MCLK     Fan     Perf  PwrCap  VRAM%  GPU%  
+0    33.0c  37.0W   300Mhz  1200Mhz  20.78%  auto  290.0W    0%   0%    
+1    31.0c  37.0W   300Mhz  1200Mhz  20.78%  auto  290.0W    0%   0%    
+2    33.0c  35.0W   300Mhz  1200Mhz  20.78%  auto  290.0W    0%   0%    
+3    33.0c  36.0W   300Mhz  1200Mhz  20.78%  auto  290.0W    0%   0%    
+================================================================================
+============================= End of ROCm SMI Log ==============================
+
+
+======================= ROCm System Management Interface =======================
+============================ Concise Hardware Info =============================
+GPU  DID   GFX RAS  SDMA RAS  UMC RAS  VBIOS             BUS           
+0    738c  ENABLED  ENABLED   ENABLED  113-D3430400-037  0000:63:00.0  
+1    738c  ENABLED  ENABLED   ENABLED  113-D3430400-037  0000:43:00.0  
+2    738c  ENABLED  ENABLED   ENABLED  113-D3430400-037  0000:26:00.0  
+3    738c  ENABLED  ENABLED   ENABLED  113-D3430400-037  0000:03:00.0  
+================================================================================
+============================= End of ROCm SMI Log ==============================
+============ Section: Running benchmark script with FP32 ========== 
+...Mini-HACC Aggregate N-Body Kernel...
+Using FP32 build
+Checking Command Line Args...
+NumBlocks: 523921
+NumPoints: 268247552
+NumBlocksToTest: 24
+Allocating arrays on device...
+Copying particle data to device...
+Copying range data to device...
+Setting up device grid...
+Launching kernel...
+launching blocks: 523896
+Operations Done = 118658470772736
+Copying result back to host...
+Kernel Elapsed Time: 8119.90 ms (hipExtLaunchKernelGGL)
+Kernel TFLOPs: 14.61 (FP32)
+============ Section: Running benchmark script with FP64 ========== 
+...Mini-HACC Aggregate N-Body Kernel...
+Using FP64 build
+Checking Command Line Args...
+NumBlocks: 523921
+NumPoints: 268247552
+NumBlocksToTest: 24
+Allocating arrays on device...
+Copying particle data to device...
+Copying range data to device...
+Setting up device grid...
+Launching kernel...
+launching blocks: 523896
+Operations Done = 118658470772736
+Copying result back to host...
+Kernel Elapsed Time: 17878.02 ms (hipExtLaunchKernelGGL)
+Kernel TFLOPs: 6.64 (FP64)
+==== Using /opt/rocm-4.5.0 to collect ROCm information.==== 
+
+
+======================= ROCm System Management Interface =======================
+================================= Concise Info =================================
+GPU  Temp   AvgPwr  SCLK    MCLK     Fan     Perf  PwrCap  VRAM%  GPU%  
+0    49.0c  44.0W   300Mhz  1200Mhz  21.57%  auto  290.0W   44%   0%    
+1    32.0c  36.0W   300Mhz  1200Mhz  20.78%  auto  290.0W    0%   0%    
+2    34.0c  37.0W   300Mhz  1200Mhz  20.78%  auto  290.0W    0%   0%    
+3    34.0c  35.0W   300Mhz  1200Mhz  20.78%  auto  290.0W    0%   0%    
+================================================================================
+============================= End of ROCm SMI Log ==============================
+
+
+======================= ROCm System Management Interface =======================
+============================ Concise Hardware Info =============================
+GPU  DID   GFX RAS  SDMA RAS  UMC RAS  VBIOS             BUS           
+0    738c  ENABLED  ENABLED   ENABLED  113-D3430400-037  0000:63:00.0  
+1    738c  ENABLED  ENABLED   ENABLED  113-D3430400-037  0000:43:00.0  
+2    738c  ENABLED  ENABLED   ENABLED  113-D3430400-037  0000:26:00.0  
+3    738c  ENABLED  ENABLED   ENABLED  113-D3430400-037  0000:03:00.0  
+================================================================================
+============================= End of ROCm SMI Log ==============================
+===== Section: Show logs ===========
+[    3.888040] amdgpu 0000:26:00.0: amdgpu: HDCP: optional hdcp ta ucode is not available
+[    3.888041] amdgpu 0000:26:00.0: amdgpu: DTM: optional dtm ta ucode is not available
+[    3.888042] amdgpu 0000:26:00.0: amdgpu: RAP: optional rap ta ucode is not available
+[    3.888043] amdgpu 0000:26:00.0: amdgpu: SECUREDISPLAY: securedisplay ta ucode is not available
+[    3.889263] amdgpu 0000:26:00.0: amdgpu: use vbios provided pptable
+[    3.889264] amdgpu 0000:26:00.0: amdgpu: smc_dpm_info table revision(format.content): 4.6
+[    3.891425] amdgpu 0000:26:00.0: amdgpu: SMU is initialized successfully!
+[    3.929569] kfd kfd: amdgpu: Allocated 3969056 bytes on gart
+[    3.930453] amdgpu: Virtual CRAT table created for GPU
+[    3.931391] amdgpu: Topology: Add dGPU node [0x738c:0x1002]
+[    3.931393] kfd kfd: amdgpu: added device 1002:738c
+[    3.931394] amdgpu 0000:26:00.0: amdgpu: SE 8, SH per SE 1, CU per SH 16, active_cu_number 120
+[    3.931684] amdgpu 0000:26:00.0: amdgpu: ring comp_1.0.0 uses VM inv eng 0 on hub 0
+[    3.931685] amdgpu 0000:26:00.0: amdgpu: ring comp_1.1.0 uses VM inv eng 1 on hub 0
+[    3.931685] amdgpu 0000:26:00.0: amdgpu: ring comp_1.2.0 uses VM inv eng 4 on hub 0
+[    3.931686] amdgpu 0000:26:00.0: amdgpu: ring comp_1.3.0 uses VM inv eng 5 on hub 0
+[    3.931687] amdgpu 0000:26:00.0: amdgpu: ring comp_1.0.1 uses VM inv eng 6 on hub 0
+[    3.931687] amdgpu 0000:26:00.0: amdgpu: ring comp_1.1.1 uses VM inv eng 7 on hub 0
+[    3.931688] amdgpu 0000:26:00.0: amdgpu: ring comp_1.2.1 uses VM inv eng 8 on hub 0
+[    3.931688] amdgpu 0000:26:00.0: amdgpu: ring comp_1.3.1 uses VM inv eng 9 on hub 0
+[    3.931689] amdgpu 0000:26:00.0: amdgpu: ring kiq_2.1.0 uses VM inv eng 10 on hub 0
+[    3.931690] amdgpu 0000:26:00.0: amdgpu: ring sdma0 uses VM inv eng 0 on hub 1
+[    3.931690] amdgpu 0000:26:00.0: amdgpu: ring sdma1 uses VM inv eng 1 on hub 1
+[    3.931691] amdgpu 0000:26:00.0: amdgpu: ring sdma2 uses VM inv eng 4 on hub 1
+[    3.931692] amdgpu 0000:26:00.0: amdgpu: ring sdma3 uses VM inv eng 5 on hub 1
+[    3.931692] amdgpu 0000:26:00.0: amdgpu: ring sdma4 uses VM inv eng 6 on hub 1
+[    3.931693] amdgpu 0000:26:00.0: amdgpu: ring sdma5 uses VM inv eng 0 on hub 2
+[    3.931693] amdgpu 0000:26:00.0: amdgpu: ring sdma6 uses VM inv eng 1 on hub 2
+[    3.931694] amdgpu 0000:26:00.0: amdgpu: ring sdma7 uses VM inv eng 4 on hub 2
+[    3.931695] amdgpu 0000:26:00.0: amdgpu: ring vcn_dec_0 uses VM inv eng 5 on hub 2
+[    3.931696] amdgpu 0000:26:00.0: amdgpu: ring vcn_enc_0.0 uses VM inv eng 6 on hub 2
+[    3.931696] amdgpu 0000:26:00.0: amdgpu: ring vcn_enc_0.1 uses VM inv eng 7 on hub 2
+[    3.931697] amdgpu 0000:26:00.0: amdgpu: ring vcn_dec_1 uses VM inv eng 8 on hub 2
+[    3.931698] amdgpu 0000:26:00.0: amdgpu: ring vcn_enc_1.0 uses VM inv eng 9 on hub 2
+[    3.931698] amdgpu 0000:26:00.0: amdgpu: ring vcn_enc_1.1 uses VM inv eng 10 on hub 2
+[    3.931699] amdgpu 0000:26:00.0: amdgpu: ring jpeg_dec_0 uses VM inv eng 11 on hub 2
+[    3.931700] amdgpu 0000:26:00.0: amdgpu: ring jpeg_dec_1 uses VM inv eng 12 on hub 2
+[    3.952695] amdgpu: Detected AMDGPU 6 Perf Events.
+[    3.952936] [drm] Initialized amdgpu 3.43.0 20150101 for 0000:26:00.0 on minor 2
+[    3.953156] amdgpu 0000:03:00.0: remove_conflicting_pci_framebuffers: bar 0: 0x37800000000 -> 0x37fffffffff
+[    3.953159] amdgpu 0000:03:00.0: remove_conflicting_pci_framebuffers: bar 2: 0x38000000000 -> 0x380001fffff
+[    3.953161] amdgpu 0000:03:00.0: remove_conflicting_pci_framebuffers: bar 5: 0xf6200000 -> 0xf627ffff
+[    3.953261] amdgpu 0000:03:00.0: amdgpu: Trusted Memory Zone (TMZ) feature not supported
+[    3.963092] amdgpu 0000:03:00.0: amdgpu: Fetched VBIOS from ROM BAR
+[    3.963094] amdgpu: ATOM BIOS: 113-D3430400-037
+[    3.963157] amdgpu 0000:03:00.0: amdgpu: MEM ECC is active.
+[    3.963158] amdgpu 0000:03:00.0: amdgpu: SRAM ECC is active.
+[    3.963162] amdgpu 0000:03:00.0: amdgpu: RAS INFO: ras initialized successfully, hardware ability[7fff] ras_mask[7fff]
+[    3.963180] amdgpu 0000:03:00.0: amdgpu: VRAM: 32752M 0x0000008000000000 - 0x00000087FEFFFFFF (32752M used)
+[    3.963181] amdgpu 0000:03:00.0: amdgpu: GART: 512M 0x0000000000000000 - 0x000000001FFFFFFF
+[    3.963182] amdgpu 0000:03:00.0: amdgpu: AGP: 267878400M 0x0000008800000000 - 0x0000FFFFFFFFFFFF
+[    3.963222] [drm] amdgpu: 32752M of VRAM memory ready
+[    3.963223] [drm] amdgpu: 515804M of GTT memory ready.
+[    3.963226] [drm] GART: num cpu pages 131072, num gpu pages 131072
+[    3.963588] amdgpu 0000:03:00.0: amdgpu: PSP runtime database doesn't exist
+[    3.965370] amdgpu 0000:03:00.0: amdgpu: Will use PSP to load VCN firmware
+[    4.107338] amdgpu 0000:03:00.0: amdgpu: HDCP: optional hdcp ta ucode is not available
+[    4.107339] amdgpu 0000:03:00.0: amdgpu: DTM: optional dtm ta ucode is not available
+[    4.107340] amdgpu 0000:03:00.0: amdgpu: RAP: optional rap ta ucode is not available
+[    4.107341] amdgpu 0000:03:00.0: amdgpu: SECUREDISPLAY: securedisplay ta ucode is not available
+[    4.108583] amdgpu 0000:03:00.0: amdgpu: use vbios provided pptable
+[    4.108584] amdgpu 0000:03:00.0: amdgpu: smc_dpm_info table revision(format.content): 4.6
+[    4.111119] amdgpu 0000:03:00.0: amdgpu: SMU is initialized successfully!
+[    4.148525] kfd kfd: amdgpu: Allocated 3969056 bytes on gart
+[    4.149525] amdgpu: Virtual CRAT table created for GPU
+[    4.151055] amdgpu: Topology: Add dGPU node [0x738c:0x1002]
+[    4.151057] kfd kfd: amdgpu: added device 1002:738c
+[    4.151058] amdgpu 0000:03:00.0: amdgpu: SE 8, SH per SE 1, CU per SH 16, active_cu_number 120
+[    4.151363] amdgpu 0000:03:00.0: amdgpu: ring comp_1.0.0 uses VM inv eng 0 on hub 0
+[    4.151364] amdgpu 0000:03:00.0: amdgpu: ring comp_1.1.0 uses VM inv eng 1 on hub 0
+[    4.151365] amdgpu 0000:03:00.0: amdgpu: ring comp_1.2.0 uses VM inv eng 4 on hub 0
+[    4.151365] amdgpu 0000:03:00.0: amdgpu: ring comp_1.3.0 uses VM inv eng 5 on hub 0
+[    4.151366] amdgpu 0000:03:00.0: amdgpu: ring comp_1.0.1 uses VM inv eng 6 on hub 0
+[    4.151366] amdgpu 0000:03:00.0: amdgpu: ring comp_1.1.1 uses VM inv eng 7 on hub 0
+[    4.151367] amdgpu 0000:03:00.0: amdgpu: ring comp_1.2.1 uses VM inv eng 8 on hub 0
+[    4.151368] amdgpu 0000:03:00.0: amdgpu: ring comp_1.3.1 uses VM inv eng 9 on hub 0
+[    4.151368] amdgpu 0000:03:00.0: amdgpu: ring kiq_2.1.0 uses VM inv eng 10 on hub 0
+[    4.151369] amdgpu 0000:03:00.0: amdgpu: ring sdma0 uses VM inv eng 0 on hub 1
+[    4.151370] amdgpu 0000:03:00.0: amdgpu: ring sdma1 uses VM inv eng 1 on hub 1
+[    4.151370] amdgpu 0000:03:00.0: amdgpu: ring sdma2 uses VM inv eng 4 on hub 1
+[    4.151371] amdgpu 0000:03:00.0: amdgpu: ring sdma3 uses VM inv eng 5 on hub 1
+[    4.151372] amdgpu 0000:03:00.0: amdgpu: ring sdma4 uses VM inv eng 6 on hub 1
+[    4.151372] amdgpu 0000:03:00.0: amdgpu: ring sdma5 uses VM inv eng 0 on hub 2
+[    4.151373] amdgpu 0000:03:00.0: amdgpu: ring sdma6 uses VM inv eng 1 on hub 2
+[    4.151373] amdgpu 0000:03:00.0: amdgpu: ring sdma7 uses VM inv eng 4 on hub 2
+[    4.151374] amdgpu 0000:03:00.0: amdgpu: ring vcn_dec_0 uses VM inv eng 5 on hub 2
+[    4.151375] amdgpu 0000:03:00.0: amdgpu: ring vcn_enc_0.0 uses VM inv eng 6 on hub 2
+[    4.151376] amdgpu 0000:03:00.0: amdgpu: ring vcn_enc_0.1 uses VM inv eng 7 on hub 2
+[    4.151376] amdgpu 0000:03:00.0: amdgpu: ring vcn_dec_1 uses VM inv eng 8 on hub 2
+[    4.151377] amdgpu 0000:03:00.0: amdgpu: ring vcn_enc_1.0 uses VM inv eng 9 on hub 2
+[    4.151378] amdgpu 0000:03:00.0: amdgpu: ring vcn_enc_1.1 uses VM inv eng 10 on hub 2
+[    4.151379] amdgpu 0000:03:00.0: amdgpu: ring jpeg_dec_0 uses VM inv eng 11 on hub 2
+[    4.151379] amdgpu 0000:03:00.0: amdgpu: ring jpeg_dec_1 uses VM inv eng 12 on hub 2
+[    4.175550] amdgpu: Detected AMDGPU 6 Perf Events.
+[    4.175784] [drm] Initialized amdgpu 3.43.0 20150101 for 0000:03:00.0 on minor 3
+[139072.015983] amdgpu: update_invalid_user_pages: Failed to get user pages: -14
+[139072.015990] amdgpu: update_invalid_user_pages: Failed to get user pages: -14
+[139072.015994] amdgpu: update_invalid_user_pages: Failed to get user pages: -14
+[139072.015999] amdgpu: update_invalid_user_pages: Failed to get user pages: -14
+[139072.016003] amdgpu: update_invalid_user_pages: Failed to get user pages: -14
