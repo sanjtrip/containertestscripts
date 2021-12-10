@@ -1,0 +1,560 @@
+./run_openmm_docker_webpage_tests.sh: 1: ./run_openmm_docker_webpage_tests.sh: !/bin/sh: not found
+./run_openmm_docker_webpage_tests.sh: 13: ./run_openmm_docker_webpage_tests.sh: cho: not found
+Fri Dec 10 10:51:54 PST 2021
+==== Section: Running on ixt-sjc2-91 Node ========
+===== Section: Show which GPU system running scripts on ========== 
+  Name:                    gfx90a                             
+      Name:                    amdgcn-amd-amdhsa--gfx90a:sramecc+:xnack-
+  Name:                    gfx90a                             
+      Name:                    amdgcn-amd-amdhsa--gfx90a:sramecc+:xnack-
+  Name:                    gfx90a                             
+      Name:                    amdgcn-amd-amdhsa--gfx90a:sramecc+:xnack-
+  Name:                    gfx90a                             
+      Name:                    amdgcn-amd-amdhsa--gfx90a:sramecc+:xnack-
+=== Section: Pull amdih/openmm docker container =======
+7.6.0: Pulling from amdih/openmm
+Digest: sha256:2172b18a077bcde93ace378303dae67e3cdc7efe3ecd6d2ba95dfea40ca1809a
+Status: Image is up to date for amdih/openmm:7.6.0
+docker.io/amdih/openmm:7.6.0
+Pull complete
+===== Section: Available ROCm versions ===============
+/opt/rocm
+/opt/rocm-4.5.0
+==== Using /opt/rocm-4.5.0 to collect ROCm information.==== 
+WARNING:  		 One or more commands failed
+
+
+======================= ROCm System Management Interface =======================
+================================= Concise Info =================================
+GPU  Temp   AvgPwr  SCLK     MCLK     Fan  Perf  PwrCap  VRAM%  GPU%  
+0    44.0c  131.0W  1700Mhz  1600Mhz  0%   auto  300.0W    0%   100%  
+1    42.0c  34.0W   800Mhz   1600Mhz  0%   auto  300.0W    0%   0%    
+2    41.0c  34.0W   800Mhz   1600Mhz  0%   auto  300.0W    0%   0%    
+3    39.0c  34.0W   800Mhz   1600Mhz  0%   auto  300.0W    0%   0%    
+================================================================================
+============================= End of ROCm SMI Log ==============================
+
+
+======================= ROCm System Management Interface =======================
+============================ Concise Hardware Info =============================
+GPU  DID   GFX RAS  SDMA RAS  UMC RAS  VBIOS           BUS           
+0    740f  ENABLED  ENABLED   ENABLED  113-D67301-051  0000:63:00.0  
+1    740f  ENABLED  ENABLED   ENABLED  113-D67301-051  0000:43:00.0  
+2    740f  ENABLED  ENABLED   ENABLED  113-D67301-051  0000:03:00.0  
+3    740f  ENABLED  ENABLED   ENABLED  113-D67301-051  0000:27:00.0  
+================================================================================
+============================= End of ROCm SMI Log ==============================
+========= Section: Run OpenMM benchmark scripts in interactive mode ============
+Platform: HIP
+
+Test: gbsa
+Ensemble: NVT
+Step Size: 4 fs
+Precision: single
+Integrated 113090 steps in 49.8911 seconds
+783.385 ns/day
+Platform: HIP
+
+Test: gbsa
+Ensemble: NVT
+Step Size: 4 fs
+Precision: mixed
+Integrated 90025 steps in 60.0711 seconds
+517.931 ns/day
+Platform: HIP
+
+Test: gbsa
+Ensemble: NVT
+Step Size: 4 fs
+Precision: double
+Integrated 107265 steps in 93.7804 seconds
+395.293 ns/day
+Platform: HIP
+
+Test: rf
+Ensemble: NVT
+Step Size: 4 fs
+Precision: single
+Integrated 81559 steps in 48.4967 seconds
+581.211 ns/day
+Platform: HIP
+
+Test: rf
+Ensemble: NVT
+Step Size: 4 fs
+Precision: mixed
+Integrated 65989 steps in 59.1228 seconds
+385.736 ns/day
+Platform: HIP
+
+Test: rf
+Ensemble: NVT
+Step Size: 4 fs
+Precision: double
+Integrated 117826 steps in 89.3508 seconds
+455.739 ns/day
+Platform: HIP
+
+Test: pme (cutoff=0.9)
+Ensemble: NVT
+Step Size: 4 fs
+Precision: single
+Integrated 18222 steps in 59.1864 seconds
+106.402 ns/day
+Platform: HIP
+
+Test: pme (cutoff=0.9)
+Ensemble: NVT
+Step Size: 4 fs
+Precision: mixed
+Integrated 102389 steps in 112.24 seconds
+315.268 ns/day
+Platform: HIP
+
+Test: pme (cutoff=0.9)
+Ensemble: NVT
+Step Size: 4 fs
+Precision: double
+Integrated 29688 steps in 46.7718 seconds
+219.367 ns/day
+Platform: HIP
+
+Test: amoebagk (epsilon=1e-05)
+Ensemble: NVT
+Step Size: 2 fs
+Precision: single
+Integrated 8168 steps in 58.8085 seconds
+24.0005 ns/day
+Platform: HIP
+
+Test: amoebagk (epsilon=1e-05)
+Ensemble: NVT
+Step Size: 2 fs
+Precision: mixed
+Integrated 8038 steps in 58.2545 seconds
+23.8431 ns/day
+Platform: HIP
+
+Test: amoebagk (epsilon=1e-05)
+Ensemble: NVT
+Step Size: 2 fs
+Precision: double
+Integrated 4791 steps in 57.7274 seconds
+14.3413 ns/day
+Platform: HIP
+
+Test: amoebapme (epsilon=1e-05)
+Ensemble: NVT
+Step Size: 2 fs
+Precision: single
+Integrated 4672 steps in 76.3236 seconds
+10.5776 ns/day
+Platform: HIP
+
+Test: amoebapme (epsilon=1e-05)
+Ensemble: NVT
+Step Size: 2 fs
+Precision: mixed
+Integrated 2653 steps in 33.4974 seconds
+13.6858 ns/day
+Platform: HIP
+
+Test: amoebapme (epsilon=1e-05)
+Ensemble: NVT
+Step Size: 2 fs
+Precision: double
+Integrated 3045 steps in 57.8385 seconds
+9.09733 ns/day
+Platform: HIP
+
+Test: apoa1rf
+Ensemble: NVT
+Step Size: 4 fs
+Precision: single
+Integrated 68877 steps in 59.5923 seconds
+399.446 ns/day
+Platform: HIP
+
+Test: apoa1rf
+Ensemble: NVT
+Step Size: 4 fs
+Precision: mixed
+Integrated 71363 steps in 60.5379 seconds
+407.399 ns/day
+Platform: HIP
+
+Test: apoa1rf
+Ensemble: NVT
+Step Size: 4 fs
+Precision: double
+Integrated 49738 steps in 60.9984 seconds
+281.802 ns/day
+Platform: HIP
+
+Test: apoa1pme
+Ensemble: NVT
+Step Size: 4 fs
+Precision: single
+Integrated 46870 steps in 60.1208 seconds
+269.429 ns/day
+Platform: HIP
+
+Test: apoa1pme
+Ensemble: NVT
+Step Size: 4 fs
+Precision: mixed
+Integrated 45437 steps in 60.3501 seconds
+260.199 ns/day
+Platform: HIP
+
+Test: apoa1pme
+Ensemble: NVT
+Step Size: 4 fs
+Precision: double
+Integrated 19353 steps in 59.2635 seconds
+112.859 ns/day
+Platform: HIP
+
+Test: apoa1ljpme
+Ensemble: NVT
+Step Size: 4 fs
+Precision: single
+Integrated 38878 steps in 59.6498 seconds
+225.252 ns/day
+Platform: HIP
+
+Test: apoa1ljpme
+Ensemble: NVT
+Step Size: 4 fs
+Precision: mixed
+Integrated 38268 steps in 60.2211 seconds
+219.615 ns/day
+Platform: HIP
+
+Test: apoa1ljpme
+Ensemble: NVT
+Step Size: 4 fs
+Precision: double
+Integrated 19144 steps in 60.4934 seconds
+109.37 ns/day
+python3: can't open file '/examples/benchmarks.py': [Errno 2] No such file or directory
+=============== Section: OpenMM benchmark script complete ===========
+========= Section: Run OpenMM benchmark scripts in non-interactive mode ============
+Platform: HIP
+
+Test: gbsa
+Ensemble: NVT
+Step Size: 4 fs
+Precision: single
+Integrated 174612 steps in 58.6777 seconds
+1028.43 ns/day
+Platform: HIP
+
+Test: gbsa
+Ensemble: NVT
+Step Size: 4 fs
+Precision: mixed
+Integrated 169870 steps in 59.0454 seconds
+994.269 ns/day
+Platform: HIP
+
+Test: gbsa
+Ensemble: NVT
+Step Size: 4 fs
+Precision: double
+Integrated 106318 steps in 59.3674 seconds
+618.917 ns/day
+Platform: HIP
+
+Test: rf
+Ensemble: NVT
+Step Size: 4 fs
+Precision: single
+Integrated 151372 steps in 58.8905 seconds
+888.329 ns/day
+Platform: HIP
+
+Test: rf
+Ensemble: NVT
+Step Size: 4 fs
+Precision: mixed
+Integrated 147303 steps in 59.0212 seconds
+862.536 ns/day
+Platform: HIP
+
+Test: rf
+Ensemble: NVT
+Step Size: 4 fs
+Precision: double
+Integrated 118518 steps in 59.3997 seconds
+689.563 ns/day
+Platform: HIP
+
+Test: pme (cutoff=0.9)
+Ensemble: NVT
+Step Size: 4 fs
+Precision: single
+Integrated 104185 steps in 51.4274 seconds
+700.139 ns/day
+Platform: HIP
+
+Test: pme (cutoff=0.9)
+Ensemble: NVT
+Step Size: 4 fs
+Precision: mixed
+Integrated 102310 steps in 59.4125 seconds
+595.133 ns/day
+Platform: HIP
+
+Test: pme (cutoff=0.9)
+Ensemble: NVT
+Step Size: 4 fs
+Precision: double
+Integrated 61257 steps in 59.5499 seconds
+355.507 ns/day
+Platform: HIP
+
+Test: amoebagk (epsilon=1e-05)
+Ensemble: NVT
+Step Size: 2 fs
+Precision: single
+Integrated 8139 steps in 58.4744 seconds
+24.0519 ns/day
+Platform: HIP
+
+Test: amoebagk (epsilon=1e-05)
+Ensemble: NVT
+Step Size: 2 fs
+Precision: mixed
+Integrated 8150 steps in 58.5104 seconds
+24.0696 ns/day
+Platform: HIP
+
+Test: amoebagk (epsilon=1e-05)
+Ensemble: NVT
+Step Size: 2 fs
+Precision: double
+Integrated 4840 steps in 58.4793 seconds
+14.3017 ns/day
+Platform: HIP
+
+Test: amoebapme (epsilon=1e-05)
+Ensemble: NVT
+Step Size: 2 fs
+Precision: single
+Integrated 4590 steps in 58.5721 seconds
+13.5415 ns/day
+Platform: HIP
+
+Test: amoebapme (epsilon=1e-05)
+Ensemble: NVT
+Step Size: 2 fs
+Precision: mixed
+Integrated 4676 steps in 59.1795 seconds
+13.6536 ns/day
+Platform: HIP
+
+Test: amoebapme (epsilon=1e-05)
+Ensemble: NVT
+Step Size: 2 fs
+Precision: double
+Integrated 3042 steps in 57.7004 seconds
+9.11013 ns/day
+Platform: HIP
+
+Test: apoa1rf
+Ensemble: NVT
+Step Size: 4 fs
+Precision: single
+Integrated 70050 steps in 60.0552 seconds
+403.117 ns/day
+Platform: HIP
+
+Test: apoa1rf
+Ensemble: NVT
+Step Size: 4 fs
+Precision: mixed
+Integrated 71684 steps in 60.5609 seconds
+409.075 ns/day
+Platform: HIP
+
+Test: apoa1rf
+Ensemble: NVT
+Step Size: 4 fs
+Precision: double
+Integrated 50071 steps in 60.8403 seconds
+284.425 ns/day
+Platform: HIP
+
+Test: apoa1pme
+Ensemble: NVT
+Step Size: 4 fs
+Precision: single
+Integrated 46754 steps in 59.8575 seconds
+269.944 ns/day
+Platform: HIP
+
+Test: apoa1pme
+Ensemble: NVT
+Step Size: 4 fs
+Precision: mixed
+Integrated 45627 steps in 60.3253 seconds
+261.394 ns/day
+Platform: HIP
+
+Test: apoa1pme
+Ensemble: NVT
+Step Size: 4 fs
+Precision: double
+Integrated 19654 steps in 60.2272 seconds
+112.78 ns/day
+Platform: HIP
+
+Test: apoa1ljpme
+Ensemble: NVT
+Step Size: 4 fs
+Precision: single
+Integrated 35228 steps in 59.3598 seconds
+205.102 ns/day
+Platform: HIP
+
+Test: apoa1ljpme
+Ensemble: NVT
+Step Size: 4 fs
+Precision: mixed
+Integrated 34415 steps in 59.9003 seconds
+198.56 ns/day
+Platform: HIP
+
+Test: apoa1ljpme
+Ensemble: NVT
+Step Size: 4 fs
+Precision: double
+Integrated 18826 steps in 60.5625 seconds
+107.431 ns/day
+=============== Section: OpenMM benchmark script complete ===========
+==== Using /opt/rocm-4.5.0 to collect ROCm information.==== 
+WARNING:  		 One or more commands failed
+
+
+======================= ROCm System Management Interface =======================
+================================= Concise Info =================================
+GPU  Temp   AvgPwr  SCLK    MCLK     Fan  Perf  PwrCap  VRAM%  GPU%  
+0    54.0c  36.0W   800Mhz  1600Mhz  0%   auto  300.0W    0%   0%    
+1    43.0c  34.0W   800Mhz  1600Mhz  0%   auto  300.0W    0%   0%    
+2    42.0c  35.0W   800Mhz  1600Mhz  0%   auto  300.0W    0%   0%    
+3    39.0c  34.0W   800Mhz  1600Mhz  0%   auto  300.0W    0%   0%    
+================================================================================
+============================= End of ROCm SMI Log ==============================
+
+
+======================= ROCm System Management Interface =======================
+============================ Concise Hardware Info =============================
+GPU  DID   GFX RAS  SDMA RAS  UMC RAS  VBIOS           BUS           
+0    740f  ENABLED  ENABLED   ENABLED  113-D67301-051  0000:63:00.0  
+1    740f  ENABLED  ENABLED   ENABLED  113-D67301-051  0000:43:00.0  
+2    740f  ENABLED  ENABLED   ENABLED  113-D67301-051  0000:03:00.0  
+3    740f  ENABLED  ENABLED   ENABLED  113-D67301-051  0000:27:00.0  
+================================================================================
+============================= End of ROCm SMI Log ==============================
+======== Section: print logs ========
+[   56.866067] amdgpu 0000:27:00.0: amdgpu: ring sdma4 uses VM inv eng 6 on hub 1
+[   56.967366] amdgpu 0000:27:00.0: amdgpu: ring vcn_dec_0 uses VM inv eng 7 on hub 1
+[   57.067840] amdgpu 0000:27:00.0: amdgpu: ring vcn_enc_0.0 uses VM inv eng 8 on hub 1
+[   57.168129] amdgpu 0000:27:00.0: amdgpu: ring vcn_enc_0.1 uses VM inv eng 9 on hub 1
+[   57.268326] amdgpu 0000:27:00.0: amdgpu: ring vcn_dec_1 uses VM inv eng 10 on hub 1
+[   57.368399] amdgpu 0000:27:00.0: amdgpu: ring vcn_enc_1.0 uses VM inv eng 11 on hub 1
+[   57.468500] amdgpu 0000:27:00.0: amdgpu: ring vcn_enc_1.1 uses VM inv eng 12 on hub 1
+[   57.568560] amdgpu 0000:27:00.0: amdgpu: ring jpeg_dec_0 uses VM inv eng 13 on hub 1
+[   57.668570] amdgpu 0000:27:00.0: amdgpu: ring jpeg_dec_1 uses VM inv eng 14 on hub 1
+[   57.770019] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 2097136 correctable hardware errors detected in umc block, no user action is needed.
+[   57.871445] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 16 uncorrectable hardware errors detected in umc block
+[   57.972788] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 2 correctable hardware errors detected in pcie_bif block, no user action is needed.
+[   58.075665] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 2 uncorrectable hardware errors detected in pcie_bif block
+[   58.180754] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 4194272 correctable hardware errors detected in umc block, no user action is needed.
+[   58.286090] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 32 uncorrectable hardware errors detected in umc block
+[   58.391929] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 3 correctable hardware errors detected in pcie_bif block, no user action is needed.
+[   58.499077] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 3 uncorrectable hardware errors detected in pcie_bif block
+[   58.608101] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 6291408 correctable hardware errors detected in umc block, no user action is needed.
+[   58.716730] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 48 uncorrectable hardware errors detected in umc block
+[   58.825292] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 4 correctable hardware errors detected in pcie_bif block, no user action is needed.
+[   58.935039] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 4 uncorrectable hardware errors detected in pcie_bif block
+[   59.046649] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 8388544 correctable hardware errors detected in umc block, no user action is needed.
+[   59.157833] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 64 uncorrectable hardware errors detected in umc block
+[   59.268918] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 5 correctable hardware errors detected in pcie_bif block, no user action is needed.
+[   59.381166] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 5 uncorrectable hardware errors detected in pcie_bif block
+[   59.494577] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 10485680 correctable hardware errors detected in umc block, no user action is needed.
+[   59.607258] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 80 uncorrectable hardware errors detected in umc block
+[   59.719201] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 6 correctable hardware errors detected in pcie_bif block, no user action is needed.
+[   59.831652] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 6 uncorrectable hardware errors detected in pcie_bif block
+[   59.945230] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 12582816 correctable hardware errors detected in umc block, no user action is needed.
+[   60.057960] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 96 uncorrectable hardware errors detected in umc block
+[   60.169892] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 7 correctable hardware errors detected in pcie_bif block, no user action is needed.
+[   60.282410] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 7 uncorrectable hardware errors detected in pcie_bif block
+[   60.397946] amdgpu 0000:27:00.0: amdgpu: Init SGPRS Successfully
+[   60.454070] amdgpu 0000:27:00.0: amdgpu: Init VGPRS Successfully
+[   60.512190] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 14679952 correctable hardware errors detected in umc block, no user action is needed.
+[   60.619366] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 112 uncorrectable hardware errors detected in umc block
+[   60.725882] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 8 correctable hardware errors detected in pcie_bif block, no user action is needed.
+[   60.832931] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 8 uncorrectable hardware errors detected in pcie_bif block
+[   60.943888] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 16777088 correctable hardware errors detected in umc block, no user action is needed.
+[   61.051175] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 128 uncorrectable hardware errors detected in umc block
+[   61.158007] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 9 correctable hardware errors detected in pcie_bif block, no user action is needed.
+[   61.265214] amdgpu 0000:27:00.0: amdgpu: socket: 0, die: 0 9 uncorrectable hardware errors detected in pcie_bif block
+[   61.372674] [drm] Initialized amdgpu 3.43.0 20150101 for 0000:27:00.0 on minor 3
+[521024.714895] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521024.715360] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521024.715618] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521024.715905] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521024.716203] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521024.716407] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521024.716621] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521024.716879] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521024.717155] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521024.717400] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521174.007166] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521174.007556] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521174.007821] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521174.008077] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521174.008333] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521174.008600] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521174.008855] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521174.009081] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521174.009282] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521174.009494] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521210.719135] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521210.719494] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521210.719761] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521210.719997] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521210.720263] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521210.720509] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521210.720745] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521210.720991] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521210.721226] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521210.721418] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521242.956600] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521242.956827] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521242.956963] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521242.957102] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521242.957239] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521242.957377] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521242.957497] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521242.957622] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521242.957727] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[521242.957866] kfd kfd: amdgpu: Interrupt ring overflow, dropping interrupt 0
+[606863.700444] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.700461] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.700463] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.700465] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.700466] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.700467] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.700469] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.700470] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.700471] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.700472] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.700473] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.700474] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.700475] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.702378] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.706364] amdgpu: update_invalid_user_pages: Failed to get user pages: -3
+[606863.708361] amdgpu: update_invalid_user_pages: Failed to get user pages: -3

@@ -19,7 +19,7 @@ echo "===== Section: Show which GPU system running scripts on ========== "
 rocminfo | grep gfx
 
 echo "=== Section: Pull amdih/openmm docker container ======="
-docker pull amdih/openmm:7.4.2
+docker pull amdih/openmm:7.6.0
 echo "Pull complete"
 
 echo "===== Section: Available ROCm versions ==============="
@@ -34,11 +34,11 @@ $ROCM_VERSION/bin/rocm-smi
 $ROCM_VERSION/bin/rocm-smi --showhw
 
 echo "========= Section: Run OpenMM benchmark scripts in interactive mode ============"
-docker run --rm -it --device=/dev/kfd --device=/dev/dri --security-opt seccomp=unconfined amdih/openmm:7.4.2 /bin/bash -c "run-benchmarks; python3 $OPENMM_PATH/examples/benchmarks.py --help"
+docker run --rm -it --device=/dev/kfd --device=/dev/dri --security-opt seccomp=unconfined amdih/openmm:7.6.0 /bin/bash -c "run-benchmarks; python3 $OPENMM_PATH/examples/benchmarks.py --help"
 echo "=============== Section: OpenMM benchmark script complete ==========="
 
 echo "========= Section: Run OpenMM benchmark scripts in non-interactive mode ============"
-docker run --rm -it --device=/dev/kfd --device=/dev/dri --security-opt seccomp=unconfined amdih/openmm:7.4.2 run-benchmarks
+docker run --rm -it --device=/dev/kfd --device=/dev/dri --security-opt seccomp=unconfined amdih/openmm:7.6.0 run-benchmarks
 echo "=============== Section: OpenMM benchmark script complete ==========="
 
 echo "==== Using $ROCM_VERSION to collect ROCm information.==== "
