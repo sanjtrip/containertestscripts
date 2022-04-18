@@ -19,7 +19,7 @@ echo "===== Section: Show which GPU system running scripts on ========== "
 rocminfo | grep gfx
 
 echo "=== Section: Pull amdih/openmm docker container ======="
-singularity pull openmm_version_tags.sif docker://amdih/openmm:7.4.2
+singularity pull openmm.sif docker://amdih/openmm:7.7.0_49
 echo "Pull complete"
 
 echo "===== Section: Available ROCm versions ==============="
