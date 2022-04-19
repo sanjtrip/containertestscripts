@@ -19,7 +19,7 @@ echo "===== Section: Show which GPU system running scripts on ========== "
 rocminfo | grep gfx
 
 echo "=== Section: Pull amdih/cp2k docker container ======="
-singularity pull cp2k_version_tags.sif docker://amdih/cp2k:87ec1599
+singularity pull cp2k.sif docker://amdih/cp2k:8.2
 echo "Pull complete"
 
 echo "===== Section: Available ROCm versions ==============="
