@@ -19,7 +19,7 @@ echo "===== Section: Show which GPU system running scripts on ========== "
 rocminfo | grep gfx
 
 echo "=== Section: Pull amdih/namd docker container ======="
-docker pull amdih/namd:2.15a2
+docker pull amdih/namd:2.15a2-20211101
 echo "Pull complete"
 
 echo "===== Section: Available ROCm versions ==============="
