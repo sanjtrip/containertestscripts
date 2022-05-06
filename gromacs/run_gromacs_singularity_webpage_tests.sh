@@ -19,7 +19,7 @@ echo "======== Section: Show which GPU running script on =========== "
 rocminfo | grep gfx
 
 echo "=== Section: Pull amdih/gromacs docker container ======"
-singularity pull gromacs_version_tags.sif docker://amdih/gromacs:2020.3
+singularity pull gromacs.sif docker://amdih/gromacs:2021.1
 echo "Pull complete"
 
 echo "===== Section: Available ROCm versions ==============="
